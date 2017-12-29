@@ -1,0 +1,13 @@
+// Bootstrap 4
+:global {
+  @import "node_modules/bootstrap/scss/_functions.scss";
+  @import "node_modules/bootstrap/scss/_variables.scss";
+  @import "node_modules/bootstrap/scss/mixins/_breakpoints.scss";
+  @import "node_modules/bootstrap/scss/mixins/_grid-framework.scss";
+  @import "node_modules/bootstrap/scss/mixins/_grid.scss";
+  @import "node_modules/bootstrap/scss/_grid.scss";
+  @import "node_modules/bootstrap/scss/utilities/_flex.scss";
+  @import "node_modules/bootstrap/scss/utilities/_spacing.scss";
+}
+
+// Custom imports
