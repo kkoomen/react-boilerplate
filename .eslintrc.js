@@ -15,6 +15,13 @@ module.exports = ({
     // require object literal shorthand syntax
     "object-shorthand": [0, "never"],
 
+    // require each propery in object to go on a newline
+    "object-curly-newline": 0,
+
+    // require the use of parenthesis instead of curly braces when the only line
+    // in an arrow function is a return statement.
+    "arrow-body-style": 1,
+
     // disallow or enforce trailing commas
     "comma-dangle": [2, "always-multiline"],
 
@@ -33,6 +40,8 @@ module.exports = ({
     // disallow control characters in regular expressions
     "no-control-regex": 2,
 
+    "no-continue" : 1,
+
     // disallow object as prop type
     "react/forbid-prop-types": 1,
 
@@ -46,7 +55,7 @@ module.exports = ({
     "no-dupe-keys": 2,
 
     // disallow a duplicate case label.
-    "no-duplicate-case": 2,
+    "no-duplicate-case": 1,
 
     // disallow empty statements
     "no-empty": 2,
@@ -312,13 +321,13 @@ module.exports = ({
     "no-multi-assign": 1,
 
     // disallow use of undefined variable (off by default)
-    "no-undefined": 2,
+    // "no-undefined": 2,
 
     // disallow declaration of variables that are not used in the code
     "no-unused-vars": [2, { "args": "none", "ignoreRestSiblings": true }],
 
     // disallow use of variables before they are defined
-    "no-use-before-define": 1,
+    "no-use-before-define": 2,
 
     //
     // Stylistic Issues
@@ -379,10 +388,10 @@ module.exports = ({
     "no-array-constructor": 0,
 
     // disallow comments inline after code (off by default)
-    "no-inline-comments": 2,
+    "no-inline-comments": 1,
 
     // disallow if as the only statement in an else block (off by default)
-    "no-lonely-if": 2,
+    "no-lonely-if": 1,
 
     // disallow mixed spaces and tabs for indentation
     "no-mixed-spaces-and-tabs": 2,
@@ -406,7 +415,7 @@ module.exports = ({
     "no-trailing-spaces": 1,
 
     // disallow dangling underscores in identifiers
-    "no-underscore-dangle": 2,
+    "no-underscore-dangle": 1,
 
     // disallow unnecessary parentheses (off by default)
     "no-extra-parens": 0,
@@ -443,7 +452,8 @@ module.exports = ({
     ],
 
     // allow just one var statement per function (off by default)
-    "one-var": [2, "never"],
+    "one-var": [1, "never"],
+    "one-var-declaration-per-line": 1,
 
     // require assignment operator shorthand where possible or prohibit it
     // entirely (off by default)
@@ -453,7 +463,7 @@ module.exports = ({
     "class-methods-use-this": 0,
 
     // enforce padding within blocks (off by default)
-    "padded-blocks": [2, "never"],
+    "padded-blocks": [1, "never"],
 
     // require or disallow an empty line between class members
     "lines-between-class-members": [2, "always"],
@@ -548,6 +558,10 @@ module.exports = ({
     // disallow use of unary operators, ++ and -- (off by default)
     "no-plusplus": 0,
 
+    "react/jsx-tag-spacing": 0,
+
+    "prefer-const": 1,
+
     //
     // eslint-plugin-react
     //
@@ -578,13 +592,13 @@ module.exports = ({
     "react/jsx-no-bind": [2, { "allowArrowFunctions": true }],
 
     // Prevent usage of setState in componentDidMount
-    "react/no-did-mount-set-state": 2,
+    "react/no-did-mount-set-state": 1,
 
     // Prevent usage of setState in componentDidUpdate
-    "react/no-will-update-set-state": 2,
+    "react/no-will-update-set-state": 1,
 
     // Prevent usage of setState in componentDidUpdate
-    "react/no-did-update-set-state": 2,
+    "react/no-did-update-set-state": 1,
 
     // Prevent multiple component definition per file
     "react/no-multi-comp": 0,

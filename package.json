@@ -52,16 +52,7 @@
     "whatwg-fetch": "2.0.3"
   },
   "devDependencies": {
-    "eslint-config-airbnb": "^16.1.0",
-    "pre-commit": "^1.2.2",
-    "stylelint": "^8.4.0",
-    "stylelint-config-standard": "^18.0.0"
-  },
-  "pre-commit": {
-    "silent": true,
-    "run": [
-      "test:lint"
-    ]
+    "eslint-config-airbnb": "^16.1.0"
   },
   "scripts": {
     "start-js": "node scripts/start.js",
@@ -71,8 +62,6 @@
     "test": "node scripts/test.js --env=jsdom",
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "test:lint:js": "eslint --ext=js --ext=jsx ./src/",
-    "test:lint:scss": "stylelint --config=.stylelintrc './src/**/*.scss'",
     "test:lint": "echo 'Running code validation tests...' && run-s test:lint:**"
   },
   "babel": {
