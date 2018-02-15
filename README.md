@@ -7,6 +7,7 @@ routing and basic structure.
 # FAQ
 
 - __How do I remove that eslint is so strict?__
+
 We extend the default `react-app`, but the stricter one is the `airbnb` one. To
 remove this you can remove `airbnb` in `.eslintrc.js`:
 
