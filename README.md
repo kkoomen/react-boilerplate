@@ -26,6 +26,5 @@ module.exports = {
   "rules": { // <-- Remove this
     ...
   }
-
 };
 ```
