@@ -1,0 +1,109 @@
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1240px) !default;
+
+$screen-xs: #{map-get($grid-breakpoints, xs)};
+$screen-sm: #{map-get($grid-breakpoints, sm)};
+$screen-md: #{map-get($grid-breakpoints, md)};
+$screen-lg: #{map-get($grid-breakpoints, lg)};
+$screen-xl: #{map-get($grid-breakpoints, xl)};
+
+$screen-phone: $screen-sm;
+$screen-tablet: $screen-md;
+$screen-desktop: $screen-lg;
+$screen-lg-desktop: $screen-xl;
+
+$screen-xs-max: #{map-get($grid-breakpoints, sm) - 1};
+$screen-sm-max: #{map-get($grid-breakpoints, md) - 1};
+$screen-md-max: #{map-get($grid-breakpoints, lg) - 1};
+$screen-lg-max: #{map-get($grid-breakpoints, xl) - 1};
+
+$grid-float-breakpoint: $screen-sm;
+$grid-float-breakpoint-min: $screen-sm-max;
+
+// Lazy media query variables.
+$mobile: 'screen and (min-width: #{$screen-sm})';
+$tablet: 'screen and (min-width: #{$screen-md})';
+$normal: 'screen and (min-width: #{$screen-lg})';
+$wide: 'screen and (min-width: #{$screen-xl})';
+$mobile-only: 'screen and (max-width: #{$screen-sm-max})';
+$tablet-only: 'screen and (min-width: #{$screen-md}) and (max-width: #{$screen-md-max})';
+$normal-only: 'screen and (min-width: #{$screen-lg}) and (max-width: #{$screen-lg-max})';
+$mobile-down: 'screen and (max-width: #{$screen-sm-max})';
+$tablet-down: 'screen and (max-width: #{$screen-md-max})';
+$normal-down: 'screen and (max-width: #{$screen-lg-max})';
+
+// Fonts
+$font--heading: 'Roboto', Arial, sans-serif;
+$font--default: Helvetica, Arial, sans-serif;
+
+// MOBILE: Font sizes (in pixels) / line-heights
+$font-size--body: 12;
+$line-height--body: 23px;
+
+$font-size--h1: 30;
+$line-height--h1: 3.8rem;
+$letter-spacing--h1: 0.8px;
+
+$font-size--h2: 25;
+$line-height--h2: 5.2rem;
+
+$font-size--h3: 22;
+$line-height--h3: 3rem;
+
+$font-size--h4: 15;
+$line-height--h4: 2rem;
+
+$font-size--button: 12;
+$line-height--button: 1.8rem;
+$letter-spacing--button: 1px;
+
+
+// DESKTOP: Font sizes (in pixels) / line-heights
+$desktop--font-size--body: 14;
+$desktop--line-height--body: 2.5rem;
+
+$desktop--font-size--h1: 60;
+$desktop--line-height--h1: 7.5rem;
+$desktop--letter-spacing--h1: 0.8px;
+
+$desktop--font-size--h2: 40;
+$desktop--line-height--h2: 5.2rem;
+
+$desktop--font-size--h3: 24;
+$desktop--line-height--h3: 3rem;
+
+$desktop--font-size--h4: 18;
+$desktop--line-height--h4: 2.5rem;
+
+$desktop--font-size--button: 14;
+$desktop--line-height--button: 2.5rem;
+$desktop--letter-spacing--button: 1px;
+
+// Colors
+$color--primary: #FF0000;
+$color--primary--lighter: #FF7777;
+$color--primary--darker: #9C0000;
+
+$color--black: #000;
+$color--grey: #e7e7e7;
+$color--grey--light: #e7e7e7;
+$color--grey--lighter: #f7f9fa;
+$color--white: #fff;
+$color--warn: #e10000;
+$color--warn--lighter: #fff9f9;
+$color--checked: #6fe100;
+
+$color--transparent: rgba(255, 255, 255, 0);
+
+//borders
+$color--border: $color--grey--light;
+$border-radius--primary: 3px;
+
+//shadows
+$box-shadow--primary: 0 2px 4px 0 rgba(0, 0, 0, 0.26);
+
+$z-index-0: 0;
+$z-index-1: 10;
+$z-index-2: 20;
+$z-index-3: 30;
+$z-index-4: 100;
+$z-index-5: 1000;
