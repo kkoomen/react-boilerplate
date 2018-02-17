@@ -1,4 +1,4 @@
-module.exports = ({
+module.exports = {
   "extends": [
     "react-app",
     "airbnb"
@@ -653,4 +653,4 @@ module.exports = ({
     // NOTE: This has to be 0 because it has been removed or doesn't work properly
     "jsx-a11y/href-no-hash": 0
   }
-});
+};

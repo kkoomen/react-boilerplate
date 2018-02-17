@@ -17,6 +17,7 @@ if (process.env.NODE_ENV === 'development') {
   const { devToolsExtension } = window;
 
   if (typeof devToolsExtension === 'function') {
+    console.log('Enabling devToolsExtension extension');
     enhancers.push(devToolsExtension());
   }
 }
