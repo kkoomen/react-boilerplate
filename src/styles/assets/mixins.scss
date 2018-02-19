@@ -1,0 +1,18 @@
+@mixin font-size($size) {
+  font-size: '${$size}px';
+  font-size: '${$size}rem';
+}
+
+@mixin icon-grid-svg($pos-x: 0, $pos-y: 0, $size: 100%) {
+  background-image: url('../images/icongrid.png');
+  background-image: url('../images/icongrid.svg');
+  background-position: $pos-x $pos-y;
+  background-repeat: no-repeat;
+  background-size: 21em 11em;
+  content: '';
+  display: inline-block;
+  font-size: $size;
+  height: 1em;
+  vertical-align: middle;
+  width: 1em;
+}
