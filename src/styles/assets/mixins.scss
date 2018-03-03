@@ -1,6 +1,6 @@
 @mixin font-size($size) {
-  font-size: '${$size}px';
-  font-size: '${$size}rem';
+  font-size: #{$size}px;
+  font-size: #{$size / 10}rem;
 }
 
 @mixin icon-grid-svg($pos-x: 0, $pos-y: 0, $size: 100%) {
