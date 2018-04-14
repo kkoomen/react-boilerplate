@@ -1,5 +1,5 @@
-@import '../variables.scss';
-@import './mixins.scss';
+@import 'assets/variables.scss';
+@import 'assets/mixins.scss';
 
 body {
   @include font-size($font-size--body);
