@@ -1,3 +1,5 @@
+@import 'assets/variables.scss';
+
 $debug--color--primary: #006DF0;
 
 .Debug {
@@ -52,10 +54,6 @@ $debug--color--primary: #006DF0;
         cursor: pointer;
       }
     }
-  }
-
-  .content {
-    flex: 1;
   }
 
   .icon--wrapper {
@@ -116,25 +114,37 @@ $debug--color--primary: #006DF0;
     width: 100%;
     height: 100%;
 
-    .state-json-tree--wrapper {
-      flex: 1;
-      display: flex;
-
-      & > ul {
-        flex: 1;
-        margin: 0 !important;
-        padding: 1rem 2rem !important;
-      }
+    @media #{$mobile-down} {
+      flex-direction: column-reverse;
     }
   }
 
+  .state-json-tree--wrapper {
+    flex-grow: 1;
+    display: flex;
+
+    & > ul {
+      flex: 1;
+      margin: 0 !important;
+      padding: 1rem 2rem !important;
+      overflow-y: auto;
+    }
+  }
   .content--wrapper {
-    flex: 1;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     flex-basis: 25rem;
     max-width: 25rem;
-    overflow-y: auto;
+
+    .content {
+      flex-grow: 1;
+      overflow-y: auto;
+    }
+
+    @media #{$mobile-down} {
+      max-width: 100%;
+    }
   }
 
   &.open {
