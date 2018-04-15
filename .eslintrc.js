@@ -20,15 +20,10 @@ module.exports = {
 
     // require the use of parenthesis instead of curly braces when the only line
     // in an arrow function is a return statement.
-    "arrow-body-style": 1,
-
-    // Disallow the import of external modules that are not declared in the
-    // package.json's dependencies, devDependencies, optionalDependencies or
-    // peerDependencies
-    "import/no-extraneous-dependencies": 0,
+    "arrow-body-style": 0,
 
     // disallow or enforce trailing commas
-    "comma-dangle": [2, "always-multiline"],
+    "comma-dangle": [1, "always-multiline"],
 
     // Prefer default export when only 1 item is being exported in a file
     "import/prefer-default-export": 1,
@@ -43,7 +38,7 @@ module.exports = {
     "no-constant-condition": 1,
 
     // disallow control characters in regular expressions
-    "no-control-regex": 2,
+    "no-control-regex": 1,
 
     "no-continue" : 1,
 
@@ -51,19 +46,19 @@ module.exports = {
     "react/forbid-prop-types": 1,
 
     // disallow use of debugger
-    "no-debugger": 2,
+    "no-debugger": 1,
 
     // disallow duplicate arguments in functions
     "no-dupe-args": 2,
 
     // disallow duplicate keys when creating object literals
-    "no-dupe-keys": 2,
+    "no-dupe-keys": 1,
 
     // disallow a duplicate case label.
-    "no-duplicate-case": 1,
+    "no-duplicate-case": 2,
 
     // disallow empty statements
-    "no-empty": 2,
+    "no-empty": 1,
 
     // disallow the use of empty character classes in regular expressions
     "no-empty-character-class": 2,
@@ -72,10 +67,10 @@ module.exports = {
     "no-ex-assign": 2,
 
     // disallow double-negation boolean casts in a boolean context
-    "no-extra-boolean-cast": 2,
+    "no-extra-boolean-cast": 1,
 
     // disallow unnecessary semicolons
-    "no-extra-semi": 2,
+    "no-extra-semi": 1,
 
     // disallow overwriting functions written as function declarations
     "no-func-assign": 2,
@@ -100,7 +95,7 @@ module.exports = {
     "no-obj-calls": 2,
 
     // disallow multiple spaces in a regular expression literal
-    "no-regex-spaces": 2,
+    "no-regex-spaces": 1,
 
     // disallow sparse arrays
     "no-sparse-arrays": 2,
@@ -113,20 +108,23 @@ module.exports = {
     "use-isnan": 2,
 
     // Ensure JSDoc comments are valid (off by default)
-    "valid-jsdoc": 2,
+    "valid-jsdoc": 1,
 
     // Ensure that the results of typeof are compared against a valid string
     "valid-typeof": 2,
 
     // Enforces return statements in callbacks of array's methods
-    "array-callback-return": 1,
+    "array-callback-return": 0,
 
+    // -------------------------------------------------------------------------
     //
     // Best Practices
     //
+    // -------------------------------------------------------------------------
     // These are rules designed to prevent you from making mistakes.  They
     // either prescribe a better way of doing something or help you avoid
     // footguns.
+    // -------------------------------------------------------------------------
 
     // treat var statements as if they were block scoped (off by default). 0:
     // deep destructuring is not compatible
@@ -144,13 +142,13 @@ module.exports = {
     "consistent-return": 0,
 
     // specify curly brace conventions for all control statements
-    "curly": 2,
+    "curly": 1,
 
     // require default case in switch statements (off by default)
     "default-case": 1,
 
     // encourages use of dot notation whenever possible
-    "dot-notation": 2,
+    "dot-notation": 0,
 
     // require the use of === and !==
     "eqeqeq": 1,
@@ -166,10 +164,10 @@ module.exports = {
 
     // disallow division operators explicitly at beginning of regular expression
     // (off by default)
-    "no-div-regex": 2,
+    "no-div-regex": 0,
 
     // disallow else after a return in an if (off by default)
-    "no-else-return": 2,
+    "no-else-return": 0,
 
     // disallow comparisons to null without a type-checking operator (off by
     // default)
@@ -198,16 +196,16 @@ module.exports = {
     "no-iterator": 2,
 
     // disallow use of labeled statements
-    "no-labels": 2,
+    "no-labels": 0,
 
     // disallow unnecessary nested blocks
-    "no-lone-blocks": 2,
+    "no-lone-blocks": 0,
 
     // disallow creation of functions within loops
     "no-loop-func": 2,
 
     // disallow use of multiple spaces
-    "no-multi-spaces": 2,
+    "no-multi-spaces": 1,
 
     // disallow use of multiline strings
     "no-multi-str": 2,
@@ -216,7 +214,7 @@ module.exports = {
     "no-native-reassign": 2,
 
     // disallow use of new operator when not part of the assignment or comparison
-    "no-new": 2,
+    "no-new": 1,
 
     // disallow use of new operator for Function object
     "no-new-func": 2,
@@ -247,7 +245,7 @@ module.exports = {
     "no-return-assign": 0,
 
     // Require parens in arrow function arguments
-    "arrow-parens": [2, "always", { "requireForBlockBody": false }],
+    "arrow-parens": [1, "always", { "requireForBlockBody": false }],
 
     // disallow use of javascript: urls.
     "no-script-url": 2,
@@ -262,7 +260,7 @@ module.exports = {
     "no-throw-literal": 2,
 
     // disallow usage of expressions in statement position
-    "no-unused-expressions": 2,
+    "no-unused-expressions": 1,
 
     // disallow use of void operator (off by default)
     "no-void": 2,
@@ -284,21 +282,26 @@ module.exports = {
     "wrap-iife": 2,
 
     // require or disallow Yoda conditions
-    "yoda": 2,
+    "yoda": 1,
 
+    // -------------------------------------------------------------------------
     //
     // Strict Mode
     //
+    // -------------------------------------------------------------------------
     // These rules relate to using strict mode.
+    // -------------------------------------------------------------------------
 
     // controls location of Use Strict Directives. 0: required by `babel-eslint`
     "strict": 0,
 
+    // -------------------------------------------------------------------------
     //
     // Variables
     //
+    // -------------------------------------------------------------------------
     // These rules have to do with variable declarations.
-    //
+    // -------------------------------------------------------------------------
 
     // disallow the catch clause parameter name being the same as a variable in
     // the outer scope (off by default in the node environment)
@@ -329,15 +332,18 @@ module.exports = {
     // "no-undefined": 2,
 
     // disallow declaration of variables that are not used in the code
-    "no-unused-vars": [2, { "args": "none", "ignoreRestSiblings": true }],
+    "no-unused-vars": [1, { "args": "none", "ignoreRestSiblings": true }],
 
     // disallow use of variables before they are defined
-    "no-use-before-define": 2,
+    "no-use-before-define": [2, { "functions": false, "classes": true, "variables": true }],
 
+    // -------------------------------------------------------------------------
     //
     // Stylistic Issues
     //
+    // -------------------------------------------------------------------------
     // These rules are purely matters of style and are quite subjective.
+    // -------------------------------------------------------------------------
 
     // disallow specified properties
     "no-restricted-properties": 1,
@@ -346,10 +352,10 @@ module.exports = {
     "no-restricted-syntax": 1,
 
     // this option sets a specific tab width for your code (off by default)
-    "indent": [2, 2, { "SwitchCase": 1 }],
+    "indent": [1, 2, { "SwitchCase": 1 }],
 
     // enforce one true brace style (off by default)
-    "brace-style": 2,
+    "brace-style": 0,
 
     // require camel case names
     "camelcase": 0,
@@ -362,7 +368,7 @@ module.exports = {
 
     // enforces consistent naming when capturing the current execution context
     // (off by default)
-    "consistent-this": [1, "_this"],
+    "consistent-this": [0, "_this"],
 
     // enforce newline at the end of file, with no multiple empty lines
     "eol-last": 1,
@@ -371,7 +377,7 @@ module.exports = {
     "func-names": 0,
 
     // enforces use of function declarations or expressions (off by default)
-    "func-style": [2, "declaration", { "allowArrowFunctions": true }],
+    "func-style": [1, "declaration", { "allowArrowFunctions": true }],
 
     // enforces spacing between keys and values in object literal properties
     "key-spacing": [1, {"beforeColon": false, "afterColon": true}],
@@ -399,13 +405,13 @@ module.exports = {
     "no-lonely-if": 1,
 
     // disallow mixed spaces and tabs for indentation
-    "no-mixed-spaces-and-tabs": 2,
+    "no-mixed-spaces-and-tabs": 1,
 
     // disallow multiple empty lines (off by default)
     "no-multiple-empty-lines": [1, {"max": 2}],
 
     // disallow nested ternary expressions (off by default)
-    "no-nested-ternary": 2,
+    "no-nested-ternary": 1,
 
     // disallow use of the Object constructor
     "no-new-object": 0,
@@ -428,7 +434,7 @@ module.exports = {
     // Make people use more spaces after block statements instead of blocks
     // being tied together
     "padding-line-between-statements": [
-      2,
+      1,
       {
         "blankLine": "always",
         "prev": ["block", "block-like", "multiline-block-like"],
@@ -458,7 +464,6 @@ module.exports = {
 
     // allow just one var statement per function (off by default)
     "one-var": [1, "never"],
-    "one-var-declaration-per-line": 1,
 
     // require assignment operator shorthand where possible or prohibit it
     // entirely (off by default)
@@ -471,7 +476,7 @@ module.exports = {
     "padded-blocks": [1, "never"],
 
     // require or disallow an empty line between class members
-    "lines-between-class-members": [2, "always"],
+    "lines-between-class-members": [1, "always"],
 
     // require quotes around object literal property names (off by default)
     "quote-props": [1, "as-needed"],
@@ -480,7 +485,7 @@ module.exports = {
     "quotes": [0, "single"],
 
     // require or disallow use of semicolons instead of ASI
-    "semi": [2, "always"],
+    "semi": [1, "always"],
 
     // enforce spacing before and after semicolons
     "semi-spacing": [1, {"before": false, "after": true}],
@@ -489,16 +494,16 @@ module.exports = {
     "sort-vars": 0,
 
     // require a space after certain keywords (off by default)
-    "keyword-spacing": [2, { "before": true, "after": true }],
+    "keyword-spacing": [1, { "before": true, "after": true }],
 
     // require or disallow space before blocks (off by default)
-    "space-before-blocks": [2, "always"],
+    "space-before-blocks": [1, "always"],
 
     // enforce consistent line breaks inside function parentheses
     "function-paren-newline": 0,
 
     // require or disallow space before function opening parenthesis (off by default)
-    "space-before-function-paren": [2, {"anonymous": "never", "named": "never"}],
+    "space-before-function-paren": [1, {"anonymous": "never", "named": "never"}],
 
     // require or disallow spaces inside object
     "object-curly-spacing": [1, "always"],
@@ -526,10 +531,13 @@ module.exports = {
     // require regex literals to be wrapped in parentheses (off by default)
     "wrap-regex": 0,
 
+    // -------------------------------------------------------------------------
     //
     // ECMAScript 6
     //
+    // -------------------------------------------------------------------------
     // These rules are only relevant to ES6 environments and are off by default.
+    // -------------------------------------------------------------------------
 
     // require let or const instead of var (off by default)
     "no-var": 2,
@@ -537,18 +545,21 @@ module.exports = {
     // enforce the spacing around the * in generator functions (off by default)
     "generator-star-spacing": [2, "before"],
 
+    // -------------------------------------------------------------------------
     //
     // Legacy
     //
-    // The following rules are included for compatibility with JSHint and JSLint.
-    // While the names of the rules may not match up with the JSHint/JSLint counterpart,
-    // the functionality is the same.
+    // -------------------------------------------------------------------------
+    // The following rules are included for compatibility with JSHint and
+    // JSLint.  While the names of the rules may not match up with the
+    // JSHint/JSLint counterpart, the functionality is the same.
+    // -------------------------------------------------------------------------
 
     // specify the maximum depth that blocks can be nested (off by default)
-    "max-depth": [2, 4],
+    "max-depth": [1, 4],
 
     // specify the maximum length of a line in your program (off by default)
-    "max-len": [0, 100, 2],
+    "max-len": [0, 80, 2],
 
     // limits the number of parameters that can be used in the function
     // declaration. (off by default)
@@ -563,20 +574,19 @@ module.exports = {
     // disallow use of unary operators, ++ and -- (off by default)
     "no-plusplus": 0,
 
-    "react/jsx-tag-spacing": 0,
-
-    "prefer-const": 1,
-
+    // -------------------------------------------------------------------------
     //
     // eslint-plugin-react
     //
+    // -------------------------------------------------------------------------
     // React specific linting rules for ESLint
+    // -------------------------------------------------------------------------
 
     // Prevent missing displayName in a React component definition
     "react/display-name": 0,
 
     // Enforce quote style for JSX attributes
-    "jsx-quotes": [2, "prefer-double"],
+    "jsx-quotes": [1, "prefer-double"],
 
     // Disallow undeclared variables in JSX
     "react/jsx-no-undef": 2,
@@ -609,7 +619,7 @@ module.exports = {
     "react/no-multi-comp": 0,
 
     // Prevent usage of unknown DOM property
-    "react/no-unknown-property": 2,
+    "react/no-unknown-property": 1,
 
     // Prevent missing props validation in a React component definition
     "react/prop-types": 0,
@@ -621,7 +631,7 @@ module.exports = {
     "react/self-closing-comp": 2,
 
     // Prevent missing parentheses around multilines JSX
-    "react/jsx-wrap-multilines": 2,
+    "react/jsx-wrap-multilines": 1,
 
     // Prevent that an element uses an Array index in its key property
     "react/no-array-index-key": 0,
