@@ -22,6 +22,11 @@ module.exports = {
     // in an arrow function is a return statement.
     "arrow-body-style": 1,
 
+    // Disallow the import of external modules that are not declared in the
+    // package.json's dependencies, devDependencies, optionalDependencies or
+    // peerDependencies
+    "import/no-extraneous-dependencies": 0,
+
     // disallow or enforce trailing commas
     "comma-dangle": [2, "always-multiline"],
 
