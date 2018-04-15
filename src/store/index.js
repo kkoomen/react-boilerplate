@@ -3,7 +3,8 @@ import { routerMiddleware } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import createHistory from 'history/createBrowserHistory';
-import Immutable from 'immutable';
+import Immutable, { Iterable } from 'immutable';
+import persistState from 'redux-localstorage';
 
 import rootReducer from '../reducers';
 
@@ -15,8 +16,6 @@ const middlewares = [
   thunkMiddleware,
   routerMiddleware(history),
 ];
-
-const fullState = (state) => state.toJS();
 
 if (process.env.NODE_ENV !== 'production') {
   const { devToolsExtension } = window;
@@ -30,10 +29,30 @@ if (process.env.NODE_ENV !== 'production') {
   const loggerMiddleware = createLogger({
     level: 'info',
     collapsed: true,
-    stateTransformer: fullState,
+    stateTransformer: (state) => state.toJS(),
+    predicate: (getState, action) => {
+      const state = getState();
+      return state.getIn(['debug', 'logs', 'enabled']);
+    },
   });
   middlewares.push(loggerMiddleware);
 }
+
+enhancers.push(persistState(['debug'], {
+  key: process.env.APP_NAME,
+  slicer: (paths) => (state) => {
+    return state.filter((obj, key) => paths.indexOf(key) !== -1);
+  },
+  serialize: (state) => {
+    return JSON.stringify(Iterable.isIterable(state) ? state.toJS() : {});
+  },
+  deserialize: (state) => {
+    return state ? Immutable.fromJS(JSON.parse(state)) : state;
+  },
+  merge: (initialState, persistedState) => {
+    return initialState.merge(persistedState);
+  },
+}));
 
 const composedEnhancers = compose(
   applyMiddleware(...middlewares),

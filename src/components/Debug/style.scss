@@ -1,0 +1,158 @@
+$debug--color--primary: #006DF0;
+
+.Debug {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #fff;
+  width: calc(100% - 4rem);
+  height: calc(100% - 4rem);
+  max-width: 5rem;
+  max-height: 5rem;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  transition-property: max-width, max-height, border-radius;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  transition-delay: 0.3s;
+  user-select: none;
+
+  button {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .description {
+    color: #888;
+  }
+
+  header,
+  .content {
+    padding: 2rem;
+  }
+
+  header {
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1, h2, h3, h4 {
+      margin: 0;
+    }
+
+    .icon--close {
+      transition: fill 0.2s ease-in-out;
+
+      &:hover {
+        fill: $debug--color--primary;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .content {
+    flex: 1;
+  }
+
+  .icon--wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: all;
+    transition: 0.3s opacity ease-in-out;
+    transition-delay: 0.6s;
+
+    .icon--debug {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    svg {
+      transition: fill 0.2s ease-in-out;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      svg {
+        fill: $debug--color--primary;
+      }
+    }
+  }
+
+  .form-item {
+    display: block;
+    margin: 1rem 0;
+
+    &.form-item--stretched {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-right: 1rem;
+    }
+  }
+
+  .category-label {
+    font-size: 120%;
+  }
+
+  .debug--outer-wrapper {
+    transition: 0.3s opacity ease-in-out;
+    pointer-events: none;
+    opacity: 0;
+    transition-delay: 0s;
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    .state-json-tree--wrapper {
+      flex: 1;
+      display: flex;
+
+      & > ul {
+        flex: 1;
+        margin: 0 !important;
+        padding: 1rem 2rem !important;
+      }
+    }
+  }
+
+  .content--wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25rem;
+    max-width: 25rem;
+    overflow-y: auto;
+  }
+
+  &.open {
+    max-width: 75rem;
+    max-height: 40rem;
+    border-radius: 3px;
+    transition-delay: 0.3s;
+
+    .icon--wrapper {
+      opacity: 0;
+      transition-delay: 0s;
+      pointer-events: none;
+    }
+
+    .debug--outer-wrapper {
+      pointer-events: all;
+      opacity: 1;
+      transition-delay: 0.6s;
+    }
+  }
+}
