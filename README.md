@@ -6,7 +6,10 @@ support for the following extensions:
 
 - [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension#installation)
 
-Options extensions that might be handy:
+
+# Handy tools
+
+Optional extensions that might be handy.
 
 ### Chrome
 
