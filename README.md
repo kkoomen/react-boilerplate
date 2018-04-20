@@ -4,7 +4,7 @@ An extension of create-react-app with some extras:
 
 - linters
 - redux
-- redux-thunk,
+- redux-thunk
 - routing
 - ImmutableJS
 - local storage support
