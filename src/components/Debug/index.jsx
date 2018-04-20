@@ -114,13 +114,11 @@ class Debug extends Component {
                       to prevent spamming.
                     </p>
                     <ul>
-                      {loggerConfig.blacklist.map((action, index) => {
-                        return (
-                          <li key={`debug--blacklisted-action--${index}`}>
-                            {action}
-                          </li>
-                        );
-                      })}
+                      {loggerConfig.blacklist.map((action, index) => (
+                        <li key={`debug--blacklisted-action--${index}`}>
+                          {action}
+                        </li>
+                      ))}
                     </ul>
                   </form>
                 </div>
