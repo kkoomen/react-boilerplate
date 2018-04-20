@@ -3,14 +3,18 @@ import { routerMiddleware } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import createHistory from 'history/createBrowserHistory';
-import Immutable, { Iterable } from 'immutable';
-import persistState from 'redux-localstorage';
+import Immutable from 'immutable';
+
+import * as storage from 'redux-storage';
+import createEngine from 'redux-storage-engine-localstorage';
+import immutableStateMerger from 'redux-storage-merger-immutablejs';
 
 import rootReducer from '../reducers';
+import loggerConfig from '../config/logger';
 
 export const history = createHistory();
 
-const initialState = Immutable.Map();
+const initialStoreState = Immutable.Map();
 const enhancers = [];
 const middlewares = [
   thunkMiddleware,
@@ -32,27 +36,23 @@ if (process.env.NODE_ENV !== 'production') {
     stateTransformer: (state) => state.toJS(),
     predicate: (getState, action) => {
       const state = getState();
+
+      const showBlacklisted = state.getIn(['debug', 'logs', 'blacklisted']);
+      if (loggerConfig.blacklist.indexOf(action.type) !== -1 && !showBlacklisted) {
+        return false;
+      }
+
       return state.getIn(['debug', 'logs', 'enabled']);
     },
   });
   middlewares.push(loggerMiddleware);
 }
 
-enhancers.push(persistState(['debug'], {
-  key: process.env.APP_NAME,
-  slicer: (paths) => (state) => {
-    return state.filter((obj, key) => paths.indexOf(key) !== -1);
-  },
-  serialize: (state) => {
-    return JSON.stringify(Iterable.isIterable(state) ? state.toJS() : {});
-  },
-  deserialize: (state) => {
-    return state ? Immutable.fromJS(JSON.parse(state)) : state;
-  },
-  merge: (initialState, persistedState) => {
-    return initialState.merge(persistedState);
-  },
-}));
+// Setup local storage
+const storageReducer = storage.reducer(rootReducer, immutableStateMerger);
+const storageEngine = createEngine(process.env.APP_NAME);
+const storageMiddleware = storage.createMiddleware(storageEngine);
+middlewares.push(storageMiddleware);
 
 const composedEnhancers = compose(
   applyMiddleware(...middlewares),
@@ -60,9 +60,13 @@ const composedEnhancers = compose(
 );
 
 const store = createStore(
-  rootReducer,
-  initialState,
+  storageReducer,
+  initialStoreState,
   composedEnhancers
 );
+
+// Use the provided storage loader to load the local storage in to the store.
+const storageLoader = storage.createLoader(storageEngine);
+storageLoader(store);
 
 export default store;

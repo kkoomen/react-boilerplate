@@ -29,11 +29,17 @@ $debug--color--primary: #006DF0;
 
   .description {
     color: #888;
+    line-height: 140%;
   }
 
   header,
   .content {
     padding: 2rem;
+  }
+
+  ul {
+    list-style-position: inside;
+    padding: 0;
   }
 
   header {
@@ -101,8 +107,14 @@ $debug--color--primary: #006DF0;
     }
   }
 
-  .category-label {
+  .debug--section--label {
     font-size: 120%;
+  }
+
+  label {
+    &[for]:hover {
+      cursor: pointer;
+    }
   }
 
   .debug--outer-wrapper {
@@ -119,9 +131,11 @@ $debug--color--primary: #006DF0;
     }
   }
 
-  .state-json-tree--wrapper {
+  .json-tree--wrapper {
     flex-grow: 1;
     display: flex;
+    overflow: auto;
+    white-space: nowrap;
 
     & > ul {
       flex: 1;
@@ -130,6 +144,23 @@ $debug--color--primary: #006DF0;
       overflow-y: auto;
     }
   }
+
+  .debug--section--wrapper {
+    &:first-child {
+      margin-top: 2rem;
+    }
+
+    &:last-child {
+      margin-bottom: 2rem;
+    }
+
+    .json-tree--wrapper {
+      & > ul {
+        padding: 0.5rem 0rem !important;
+      }
+    }
+  }
+
   .content--wrapper {
     flex-grow: 1;
     display: flex;
@@ -138,6 +169,14 @@ $debug--color--primary: #006DF0;
     max-width: 25rem;
 
     .content {
+      padding-top: 0;
+      padding-bottom: 0;
+      display: flex;
+      flex-grow: 1;
+      overflow: hidden;
+    }
+
+    .content--scrollable-container {
       flex-grow: 1;
       overflow-y: auto;
     }
