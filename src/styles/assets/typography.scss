@@ -9,7 +9,7 @@ body {
   font-family: $font--default;
   line-height: $line-height--body;
 
-  @media #{tablet} {
+  @media #{$normal} {
     @include font-size($desktop--font-size--body);
     line-height: $desktop--line-height--body;
   }
