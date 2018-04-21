@@ -3,7 +3,7 @@ import { routerMiddleware } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import createHistory from 'history/createBrowserHistory';
-import Immutable from 'immutable';
+import { Map } from 'immutable';
 
 import * as storage from 'redux-storage';
 import createEngine from 'redux-storage-engine-localstorage';
@@ -14,7 +14,7 @@ import loggerConfig from '../config/logger';
 
 export const history = createHistory();
 
-const initialStoreState = Immutable.Map();
+const initialStoreState = Map();
 const enhancers = [];
 const middlewares = [
   thunkMiddleware,

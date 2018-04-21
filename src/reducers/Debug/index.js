@@ -1,4 +1,4 @@
-import Immutable from 'immutable';
+import { fromJS } from 'immutable';
 
 import {
   DEBUG_ENABLE_ACTION_LOGS,
@@ -7,7 +7,7 @@ import {
   DEBUG_DISABLE_BLACKLISTED_ACTION_LOGS,
 } from '../../actions/Debug';
 
-const initialState = Immutable.fromJS({
+const initialState = fromJS({
   logs: {
     enabled: true,
     blacklisted: false,
