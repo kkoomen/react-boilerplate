@@ -59,7 +59,8 @@
     "whatwg-fetch": "2.0.3"
   },
   "devDependencies": {
-    "eslint-config-airbnb": "^16.1.0"
+    "eslint-config-airbnb": "^16.1.0",
+    "react-hot-loader": "^4.1.2"
   },
   "scripts": {
     "start-js": "node scripts/start.js",

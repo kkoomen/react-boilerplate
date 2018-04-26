@@ -10,7 +10,10 @@ module.exports = {
   },
 
   "rules": {
-    "react/jsx-closing-bracket-location":0,
+    "react/jsx-closing-bracket-location": 0,
+
+    // Disallow dependencies being used in devDependencies
+    "import/no-extraneous-dependencies": 0,
 
     // require object literal shorthand syntax
     "object-shorthand": [0, "never"],

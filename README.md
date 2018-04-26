@@ -2,6 +2,7 @@
 
 An extension of create-react-app with some extras:
 
+- hot reloading :fire:
 - linters
 - redux
 - redux-thunk
