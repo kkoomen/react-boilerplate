@@ -18,7 +18,7 @@ This extension also has built-in support for the following extensions:
 
 # Getting started
 
-- Clone the reposity
+- Clone the repository
 - (optional, but recommended) Go into `package.json` and set the `name` property
   at the top to your new projects name. This will also set local storage keys
   automatically correct.
