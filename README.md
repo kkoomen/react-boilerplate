@@ -1,6 +1,6 @@
 # React Redux Web
 
-An extension of create-react-app with some extras:
+An extension of create-react-app (ejected) with some extras:
 
 - hot reloading :fire:
 - linters
@@ -8,8 +8,7 @@ An extension of create-react-app with some extras:
 - redux-thunk
 - routing
 - ImmutableJS
-- local storage support
-- ejected version of create-react-app
+- local storage (for the redux state)
 - basic structure
 
 This extension also has built-in support for the following extensions:
