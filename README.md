@@ -20,7 +20,7 @@ This extension also has built-in support for the following extensions:
 
 - Clone the repository
 - (optional, but recommended) Go into `package.json` and set the `name` property
-  at the top to your new projects name. This will also set local storage keys
+  at the top to your new project its name. This will also set local storage keys
   automatically correct.
 - Run `npm install`
 - Run `npm start`
