@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
-import { hot } from 'react-hot-loader';
 
 // Containers
 import Home from '../Home';
@@ -30,4 +29,4 @@ class App extends Component {
   }
 }
 
-export default hot(module)(App);
+export default App;

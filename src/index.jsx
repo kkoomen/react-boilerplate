@@ -19,4 +19,16 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+if (module.hot) {
+  module.hot.accept('./containers/App', () => {
+    ReactDOM.render(
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <App />
+        </ConnectedRouter>
+      </Provider>,
+      document.getElementById('root'));
+  });
+}
+
 registerServiceWorker();
