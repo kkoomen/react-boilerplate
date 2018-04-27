@@ -12,6 +12,9 @@ module.exports = {
   "rules": {
     "react/jsx-closing-bracket-location": 0,
 
+    // Disallow mutable export variables
+    "import/no-mutable-exports": 0,
+
     // Disallow dependencies being used in devDependencies
     "import/no-extraneous-dependencies": 0,
 
