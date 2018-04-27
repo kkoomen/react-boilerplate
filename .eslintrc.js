@@ -479,7 +479,7 @@ module.exports = {
     "class-methods-use-this": 0,
 
     // enforce padding within blocks (off by default)
-    "padded-blocks": [1, "never"],
+    "padded-blocks": [0, "never"],
 
     // require or disallow an empty line between class members
     "lines-between-class-members": [1, "always"],
