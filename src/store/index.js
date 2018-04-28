@@ -50,7 +50,11 @@ if (process.env.NODE_ENV !== 'production') {
 
 // Setup local storage
 const storageReducer = storage.reducer(rootReducer, immutableStateMerger);
-const storageEngine = createEngine(process.env.APP_NAME);
+const storageEngine = createEngine(process.env.APP_NAME, (key, value) => {
+  // Provide your keys here that have to be excluded of saving in local storage.
+  const excluded_keys = ['ui']
+  return (excluded_keys.indexOf(key) !== -1) ? Map() : value;
+});
 const storageMiddleware = storage.createMiddleware(storageEngine);
 middlewares.push(storageMiddleware);
 
