@@ -52,7 +52,7 @@ if (process.env.NODE_ENV !== 'production') {
 const storageReducer = storage.reducer(rootReducer, immutableStateMerger);
 const storageEngine = createEngine(process.env.APP_NAME, (key, value) => {
   // Provide your keys here that have to be excluded of saving in local storage.
-  const excluded_keys = ['ui']
+  const excluded_keys = ['ui'];
   if (excluded_keys.indexOf(key) === -1) return value;
 });
 const storageMiddleware = storage.createMiddleware(storageEngine);
