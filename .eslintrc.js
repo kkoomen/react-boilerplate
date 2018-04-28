@@ -591,6 +591,9 @@ module.exports = {
     // Prevent missing displayName in a React component definition
     "react/display-name": 0,
 
+    // Require a space before the closing tag
+    "react/jsx-tag-spacing": 1,
+
     // Enforce quote style for JSX attributes
     "jsx-quotes": [1, "prefer-double"],
 
