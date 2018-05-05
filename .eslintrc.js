@@ -10,6 +10,9 @@ module.exports = {
   },
 
   "rules": {
+    // Prefer absolute imports defined before relative imports
+    "import/first": 0,
+
     "react/jsx-closing-bracket-location": 0,
 
     // Disallow mutable export variables
