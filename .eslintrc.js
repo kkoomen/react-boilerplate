@@ -13,6 +13,9 @@ module.exports = {
     // Prefer absolute imports defined before relative imports
     "import/first": 0,
 
+    // Disallow wrong indentation
+    "react/jsx-indent": 1,
+
     "react/jsx-closing-bracket-location": 0,
 
     // Disallow mutable export variables
