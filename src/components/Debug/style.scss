@@ -136,6 +136,8 @@ $debug--color--primary: #006DF0;
     display: flex;
     overflow: auto;
     white-space: nowrap;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
 
     & > ul {
       flex: 1;
