@@ -13,6 +13,12 @@ module.exports = {
     // Prefer absolute imports defined before relative imports
     "import/first": 0,
 
+    // Limiting the maximum of props on a single line (default: 1)
+    "react/jsx-max-props-per-line": 1,
+
+    // Ensure correct position of the first property.
+    "react/jsx-first-prop-new-line": 0,
+
     // Disallow wrong indentation
     "react/jsx-indent": 1,
 
