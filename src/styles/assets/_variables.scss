@@ -11,6 +11,34 @@ $grid-breakpoints: (
   xl: 1240px
 );
 
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1240px
+);
+
+$grid-gutter-width: 50px;
+$grid-xs-gutter-width: 40px;
+$grid-sm-gutter-width: 40px;
+$grid-md-gutter-width: 60px;
+$grid-lg-gutter-width: 60px;
+
+$grid-gutter-width-base: 40px;
+$grid-xs-gutter-width-base: 40px;
+$grid-sm-gutter-width-base: 40px;
+$grid-md-gutter-width-base: 40px;
+$grid-lg-gutter-width-base: 60px;
+$grid-xl-gutter-width-base: 60px;
+
+$grid-gutter-widths: (
+  xs: $grid-xs-gutter-width-base,
+  sm: $grid-sm-gutter-width-base,
+  md: $grid-md-gutter-width-base,
+  lg: $grid-lg-gutter-width-base,
+  xl: $grid-xl-gutter-width-base
+);
+
 $screen-xs: #{map-get($grid-breakpoints, xs)};
 $screen-sm: #{map-get($grid-breakpoints, sm)};
 $screen-md: #{map-get($grid-breakpoints, md)};
