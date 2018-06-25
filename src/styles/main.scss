@@ -5,14 +5,14 @@
 // -----------------------------------------------------------------------------
 @import 'bootstrap/scss/functions.scss';
 @import 'bootstrap/scss/variables.scss';
+@import 'bootstrap/scss/mixins/grid-framework.scss';
+@import 'bootstrap/scss/mixins.scss';
 
 // Overwrite variables and mixins
 @import 'assets/variables.scss';
 @import 'assets/mixins.scss';
-
-@import 'bootstrap/scss/mixins/grid-framework.scss';
-@import 'bootstrap/scss/mixins.scss';
 @import 'assets/grid.scss';
+
 @import 'bootstrap/scss/grid.scss';
 @import 'bootstrap/scss/reboot.scss';
 
