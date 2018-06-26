@@ -687,7 +687,7 @@ module.exports = {
     "jsx-a11y/iframe-has-title": 1,
 
     // Enforce anchors having content for screen readers
-    "jsx-a11y/anchor-has-content": 0,
+    "jsx-a11y/anchor-has-content": 1,
 
     // NOTE: This has to be 0 because it has been removed or doesn't work properly
     "jsx-a11y/href-no-hash": 0
