@@ -444,7 +444,7 @@ module.exports = {
     "no-trailing-spaces": 1,
 
     // disallow dangling underscores in identifiers
-    "no-underscore-dangle": 1,
+    "no-underscore-dangle": 0,
 
     // disallow unnecessary parentheses (off by default)
     "no-extra-parens": 0,
