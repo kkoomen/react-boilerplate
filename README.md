@@ -31,8 +31,8 @@ Optional extensions that might be handy.
 
 ### Chrome
 
-- [ImmutableJS Object Formatter](https://chrome.google.com/webstore/detail/immutablejs-object-format/hgldghadipiblonfkkicmgcbbijnpeog)
+- [ImmutableJS Object Formatter](https://chrome.google.com/webstore/detail/immutablejs-object-format/hgldghadipiblonfkkicmgcbbijnpeog){:target="_blank"}
 
 ### Template generators
 
-- [cra-gen](https://github.com/kkoomen/cra-gen)
+- [cra-gen](https://github.com/kkoomen/cra-gen){:target="_blank"}
