@@ -17,7 +17,7 @@ This extension also has built-in support for the following extensions:
 
 ## Without ImmutableJS
 
-If you wish to use a version without ImmutableJS, use the `immutablejs-exclude` branch.
+If you wish to use a version without ImmutableJS, use the `immutablejs-excluded` branch.
 
 # Getting started
 
