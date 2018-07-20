@@ -15,9 +15,11 @@ This extension also has built-in support for the following extensions:
 
 - [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension#installation)
 
-## Without ImmutableJS
+## Branches
 
-If you wish to use a version without ImmutableJS, use the `immutablejs-excluded` branch.
+- `immutablejs-excluded`: An duplicate of the master branch, excluding immutableJS.
+- `immutablejs-excluded--bootstrap-4`: An duplicate of the `immutablejs-excluded` branch, including bootstrap 4.
+- `bootstrap-4`: A duplicate of the master branch, including bootstrap 4.
 
 # Getting started
 
