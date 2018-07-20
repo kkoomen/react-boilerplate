@@ -15,6 +15,9 @@ This extension also has built-in support for the following extensions:
 
 - [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension#installation)
 
+## Without ImmutableJS
+
+If you wish to use a version without ImmutableJS, use the `immutablejs-exclude` branch.
 
 # Getting started
 
