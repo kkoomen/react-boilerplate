@@ -1,4 +1,4 @@
-@import 'assets/variables';
+@import 'assets/variables.scss';
 
 $debug--color--primary: #006DF0;
 
@@ -189,8 +189,8 @@ $debug--color--primary: #006DF0;
   }
 
   &.open {
-    max-width: 75rem;
-    max-height: 40rem;
+    max-width: 100rem;
+    max-height: 50rem;
     border-radius: 3px;
     transition-delay: 0.3s;
 
