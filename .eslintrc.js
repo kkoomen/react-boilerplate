@@ -10,6 +10,25 @@ module.exports = {
   },
 
   "rules": {
+    // Ensure consistent use of file extension within the import path
+    "import/extensions": 2,
+
+    // Require a newline after each call in a method chain
+    "newline-per-chained-call": 1,
+
+    // Require using arrow functions for callbacks
+    "prefer-arrow-callback": 1,
+
+    // Disallow or enforce spaces inside of blocks after opening block and
+    // before closing block
+    "block-spacing": 1,
+
+    // Require or disallow newlines around variable declarations
+    "one-var-declaration-per-line": 1,
+
+    // Suggest using const on variables that are never re-assigned
+    "prefer-const": 1,
+
     // Prefer absolute imports defined before relative imports
     "import/first": 0,
 
@@ -417,7 +436,7 @@ module.exports = {
     "no-array-constructor": 0,
 
     // disallow comments inline after code (off by default)
-    "no-inline-comments": 1,
+    "no-inline-comments": 0,
 
     // disallow if as the only statement in an else block (off by default)
     "no-lonely-if": 1,
