@@ -668,7 +668,7 @@ module.exports = {
     "react/react-in-jsx-scope": 2,
 
     // Prevent extra closing tags for components without children
-    "react/self-closing-comp": 2,
+    "react/self-closing-comp": 1,
 
     // Prevent missing parentheses around multilines JSX
     "react/jsx-wrap-multilines": 1,
