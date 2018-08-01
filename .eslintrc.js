@@ -10,6 +10,9 @@ module.exports = {
   },
 
   "rules": {
+    // Ensure closing tag to match indentation of opening of tag
+    "react/jsx-closing-tag-location": 1,
+
     // Ensure consistent use of file extension within the import path
     "import/extensions": 2,
 
