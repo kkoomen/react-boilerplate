@@ -8,6 +8,9 @@ module.exports = {
     "es6": true
   },
   "rules": {
+    // Ensure correct code indentation for JSX.
+    "react/jsx-indent-props": 1,
+
     // Ensure no unnecessary braces are used.
     "react/jsx-curly-brace-presence": 1,
 
