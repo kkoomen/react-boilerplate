@@ -30,6 +30,14 @@ This extension also has built-in support for the following extensions:
 - Run `npm install`
 - Run `npm start`
 
+# Linting
+
+All rules within linting are set to a warning, except for those that are
+definitely a no-op. Linters should suggest, not force.
+
+If you find any rules that are left out or should be different, feel free to
+make a pull request.
+
 # Handy tools
 
 Optional extensions that might be handy.
