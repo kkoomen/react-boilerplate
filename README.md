@@ -33,7 +33,8 @@ This extension also has built-in support for the following extensions:
 # Linting
 
 All rules within linting are set to a warning, except for those that are
-definitely a no-op. Linters should suggest, not force.
+definitely a no-op, such as deprecated functions, or really bad ways of handling
+code such as the use of `eval()`. Linters should suggest, not force.
 
 If you find any rules that are left out or should be different, feel free to
 make a pull request.
