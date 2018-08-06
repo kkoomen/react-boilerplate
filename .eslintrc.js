@@ -8,6 +8,14 @@ module.exports = {
     "es6": true
   },
   "rules": {
+    // Ensure correct spacing around the arrow in an arrow-function.
+    "arrow-spacing": 1,
+
+    // Disallow the usage of the "dangerouslySetInnerHTML" -attribute.
+    // This will be set only for this project, since we use Headless Drupal and
+    // we have to render some CKEDITOR's content.
+    "react/no-danger": 0,
+
     // Ensure correct code indentation for JSX.
     "react/jsx-indent-props": 1,
 
@@ -661,5 +669,8 @@ module.exports = {
 
     // NOTE: This has to be 0 because it has been removed or doesn't work properly.
     "jsx-a11y/href-no-hash": 0
+
+    // Ensure captions are used in media.
+    "jsx-a11y/media-has-caption": 0,
   }
 };
