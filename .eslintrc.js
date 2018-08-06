@@ -11,6 +11,12 @@ module.exports = {
     // Ensure correct spacing around the arrow in an arrow-function.
     "arrow-spacing": 1,
 
+    // Ensure no unused states.
+    "react/no-unused-state": 1,
+
+    // Ensure no useless constructors.
+    "no-useless-constructor": 1,
+
     // Disallow the usage of the "dangerouslySetInnerHTML" -attribute.
     // This will be set only for this project, since we use Headless Drupal and
     // we have to render some CKEDITOR's content.
