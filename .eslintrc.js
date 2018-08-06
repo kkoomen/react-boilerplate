@@ -668,7 +668,7 @@ module.exports = {
     "jsx-a11y/anchor-has-content": 0,
 
     // NOTE: This has to be 0 because it has been removed or doesn't work properly.
-    "jsx-a11y/href-no-hash": 0
+    "jsx-a11y/href-no-hash": 0,
 
     // Ensure captions are used in media.
     "jsx-a11y/media-has-caption": 0,
