@@ -8,6 +8,9 @@ module.exports = {
     "es6": true
   },
   "rules": {
+    // Ensure no unused prop types.
+    "react/no-unused-prop-types": 1,
+
     // Ensure correct spacing around the arrow in an arrow-function.
     "arrow-spacing": 1,
 
