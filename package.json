@@ -70,8 +70,7 @@
     "build": "npm-run-all build-css build-js",
     "test": "node scripts/test.js --env=jsdom",
     "build-css": "node-sass-chokidar --include-path ./src/styles/ --include-path ./node_modules src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src/styles/ --include-path ./node_modules src/ -o src/ --watch --recursive",
-    "test:lint": "echo 'Running code validation tests...' && run-s test:lint:**"
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src/styles/ --include-path ./node_modules src/ -o src/ --watch --recursive"
   },
   "babel": {
     "presets": [
