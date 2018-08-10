@@ -1,17 +1,23 @@
-$icon-grid--rows: 3;
-$icon-grid--icons: (
+// Define the amount of rows.
+$rows: 3;
+
+// Define the icons from left to right in the icongrid using a human-readable
+// name. This will also be part of the classname.
+$icon-names: (
   facebook,
   instagram,
   linkedin,
   twitter
 );
 
-%icon {
+// The base of an icon.
+@mixin icon {
+  // The path here is defined starting from '/src/'.
   background-image: url('assets/images/icons/icongrid.png');
   background-image: url('assets/images/icons/icongrid.svg');
   background-repeat: no-repeat;
   background-position: 0 0;
-  background-size: #{length($icon-grid--icons)}em #{$icon-grid--rows}em;
+  background-size: #{length($icon-names)}em #{$rows}em;
   display: inline-block;
   font-size: 100%;
   vertical-align: middle;
@@ -21,27 +27,53 @@ $icon-grid--icons: (
   width: 1em;
 }
 
+// Define the following classes:
+//   - icon
+//   - icon-before
+//   - icon-after
 .icon,
 .icon-before:before,
 .icon-after:after {
-  @extend %icon;
+  @include icon;
 }
 .icon-before:before,
 .icon-after:after {
   content: '';
 }
 
-@for $index from 1 through length($icon-grid--icons) {
-  $name: nth($icon-grid--icons, $index);
+// Define classes based on the names (x-axis).
+//
+// Example:
+//   - icon-facebook
+//   - icon-twitter
+@for $index from 1 through length($icon-names) {
+  $name: nth($icon-names, $index);
   $offset-x: -#{$index - 1}em;
-  .icon-#{$name} {
+  .icon-#{$name}.icon {
+    background-position-x: $offset-x;
+  }
+  .icon-#{$name}.icon-before:before {
+    background-position-x: $offset-x;
+  }
+  .icon-#{$name}.icon-after:after {
     background-position-x: $offset-x;
   }
 }
 
-@for $index from 1 through length($icon-grid--rows) + 1 {
+// Generate variants (y-axis) for all the icons.
+//
+// Example:
+//   - icon-variant-1 (result: 'background-position-y: -1em')
+//   - icon-variant-2 (result: 'background-position-y: -2em')
+@for $index from 1 through (length($rows) + 1) {
   $offset-y: -#{$index}em;
-  .icon-offset-#{$index} {
+  .icon-variant-#{$index}.icon {
+    background-position-y: $offset-y;
+  }
+  .icon-variant-#{$index}.icon-before:before {
+    background-position-y: $offset-y;
+  }
+  .icon-variant-#{$index}.icon-after:after {
     background-position-y: $offset-y;
   }
 }
