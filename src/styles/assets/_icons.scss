@@ -1,0 +1,47 @@
+$icon-grid--rows: 3;
+$icon-grid--icons: (
+  facebook,
+  instagram,
+  linkedin,
+  twitter
+);
+
+%icon {
+  background-image: url('assets/images/icons/icongrid.png');
+  background-image: url('assets/images/icons/icongrid.svg');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: #{length($icon-grid--icons)}em #{$icon-grid--rows}em;
+  display: inline-block;
+  font-size: 100%;
+  vertical-align: middle;
+  text-indent: -9999px;
+  overflow: hidden;
+  height: 1em;
+  width: 1em;
+}
+
+.icon,
+.icon-before:before,
+.icon-after:after {
+  @extend %icon;
+}
+.icon-before:before,
+.icon-after:after {
+  content: '';
+}
+
+@for $index from 1 through length($icon-grid--icons) {
+  $name: nth($icon-grid--icons, $index);
+  $offset-x: -#{$index - 1}em;
+  .icon-#{$name} {
+    background-position-x: $offset-x;
+  }
+}
+
+@for $index from 1 through length($icon-grid--rows) + 1 {
+  $offset-y: -#{$index}em;
+  .icon-offset-#{$index} {
+    background-position-y: $offset-y;
+  }
+}
