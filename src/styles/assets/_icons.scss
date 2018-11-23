@@ -65,7 +65,7 @@ $icon-names: (
 // Example:
 //   - icon-variant-1 (result: 'background-position-y: -1em')
 //   - icon-variant-2 (result: 'background-position-y: -2em')
-@for $index from 1 through (length($rows) + 1) {
+@for $index from 1 through ($rows + 1) {
   $offset-y: -#{$index}em;
   .icon-variant-#{$index}.icon {
     background-position-y: $offset-y;
