@@ -141,6 +141,10 @@ $debug--color--primary: #006DF0;
     font-family: "Courier New", Courier, monospace;
     font-weight: bold;
 
+    * {
+      font-family: inherit;
+    }
+
     & > ul {
       flex: 1;
       margin: 0 !important;

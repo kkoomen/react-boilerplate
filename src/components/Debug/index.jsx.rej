@@ -1,0 +1,17 @@
+***************
+*** 15,21 ****
+  import './style.css';
+  
+  class Debug extends Component {
+-   constructor(props: any) {
+      super(props);
+  
+      this.state = {
+--- 15,21 ----
+  import './style.css';
+  
+  class Debug extends Component {
++   constructor(props) {
+      super(props);
+  
+      this.state = {
