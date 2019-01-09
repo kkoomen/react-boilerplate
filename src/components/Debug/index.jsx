@@ -15,7 +15,7 @@ import loggerConfig from '../../config/logger';
 import './style.css';
 
 class Debug extends Component {
-  constructor(props: any) {
+  constructor(props) {
     super(props);
 
     this.state = {
