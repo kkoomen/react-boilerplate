@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { routerMiddleware } from 'react-router-redux';
+import { routerMiddleware } from 'connected-react-router'
 import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import createHistory from 'history/createBrowserHistory';
@@ -49,7 +49,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // Setup local storage
-const storageReducer = storage.reducer(rootReducer, immutableStateMerger);
+const storageReducer = storage.reducer(rootReducer(history), immutableStateMerger);
 const storageEngine = createEngine(process.env.APP_NAME, (key, value) => {
   // Provide your keys here that have to be excluded of saving in local storage.
   const excluded_keys = ['routing', 'ui'];
