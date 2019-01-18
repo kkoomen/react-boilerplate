@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'connected-react-router';
 import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
-import createHistory from 'history/createBrowserHistory';
+import { createBrowserHistory } from 'history';
 import { Map } from 'immutable';
 
 import * as storage from 'redux-storage';
@@ -11,8 +11,9 @@ import immutableStateMerger from 'redux-storage-merger-immutablejs';
 
 import rootReducer from '../reducers';
 import loggerConfig from '../config/logger';
+import { __DEBUG__ } from '../config/constants';
 
-export const history = createHistory();
+export const history = createBrowserHistory();
 
 const initialStoreState = Map();
 const enhancers = [];
@@ -21,15 +22,15 @@ const middlewares = [
   routerMiddleware(history),
 ];
 
-if (process.env.NODE_ENV !== 'production') {
+if (__DEBUG__) {
   const { devToolsExtension } = window;
 
   if (typeof devToolsExtension === 'function') {
-    console.log('[setup] ✓ Enabling Redux DevTools Extension');
+    console.info('[setup] ✓ Enabling Redux DevTools Extension');
     enhancers.push(devToolsExtension());
   }
 
-  console.log('[setup] ✓ Enabling state logger');
+  console.info('[setup] ✓ Enabling state logger');
   const loggerMiddleware = createLogger({
     level: 'info',
     collapsed: true,

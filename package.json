@@ -68,6 +68,8 @@
     "build-js": "node scripts/build.js",
     "build": "npm-run-all build-css build-js",
     "test": "node scripts/test.js --env=jsdom",
+    "eslint": "eslint ./src/",
+    "eslint:fix": "eslint --fix ./src/",
     "build-css": "node-sass-chokidar --include-path ./src/styles/ --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src/styles/ --include-path ./node_modules src/ -o src/ --watch --recursive"
   },

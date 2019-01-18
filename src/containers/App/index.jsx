@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 
-// Containers
+import { __DEBUG__ } from '../../config/constants';
 import Home from '../Home';
 import NotFound from '../NotFound';
-
-// Components
 import Debug from '../../components/Debug';
 
 class App extends Component {
@@ -29,7 +27,7 @@ class App extends Component {
           </Switch>
         </main>
 
-        {process.env.NODE_ENV !== 'production' ? <Debug /> : null}
+        {__DEBUG__ && <Debug />}
       </div>
     );
   }
