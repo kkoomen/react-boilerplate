@@ -90,7 +90,7 @@ module.exports = {
     "comma-dangle": [1, "always-multiline"],
 
     // Prefer default export when only 1 item is being exported in a file.
-    "import/prefer-default-export": 1,
+    "import/prefer-default-export": 0,
 
     // Disallow assignment in conditional expressions.
     "no-cond-assign": 1,
@@ -678,6 +678,12 @@ module.exports = {
 
     // NOTE: This has to be 0 because it has been removed or doesn't work properly.
     "jsx-a11y/href-no-hash": 0,
+
+    // Disallow the use of JSX in .js files.
+    "react/jsx-filename-extension": 0,
+
+    // Only allowed tabIndex to be declared on interactive elements.
+    "jsx-a11y/no-noninteractive-tabindex": 1,
 
     // Ensure captions are used in media.
     "jsx-a11y/media-has-caption": 0,
