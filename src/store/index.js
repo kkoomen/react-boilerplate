@@ -74,4 +74,11 @@ const store = createStore(
 const storageLoader = storage.createLoader(storageEngine);
 storageLoader(store);
 
+// Enable Webpack hot module replacement for reducers.
+if (module.hot) {
+  module.hot.accept('../reducers', () => {
+    store.replaceReducer(rootReducer(history));
+  });
+}
+
 export default store;

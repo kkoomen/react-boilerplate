@@ -23,6 +23,7 @@ const render = () => {
 
 render();
 
+// Enable Webpack hot module replacement for components.
 if (module.hot) {
   module.hot.accept('./containers/App', () => {
     render();
