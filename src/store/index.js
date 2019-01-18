@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { routerMiddleware } from 'react-router-redux';
+import { routerMiddleware } from 'connected-react-router';
 import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
-import createHistory from 'history/createBrowserHistory';
+import { createBrowserHistory } from 'history';
 import { Map } from 'immutable';
 
 import * as storage from 'redux-storage';
@@ -11,8 +11,9 @@ import immutableStateMerger from 'redux-storage-merger-immutablejs';
 
 import rootReducer from '../reducers';
 import loggerConfig from '../config/logger';
+import { __DEBUG__ } from '../config/constants';
 
-export const history = createHistory();
+export const history = createBrowserHistory();
 
 const initialStoreState = Map();
 const enhancers = [];
@@ -21,15 +22,15 @@ const middlewares = [
   routerMiddleware(history),
 ];
 
-if (process.env.NODE_ENV !== 'production') {
+if (__DEBUG__) {
   const { devToolsExtension } = window;
 
   if (typeof devToolsExtension === 'function') {
-    console.log('[setup] ✓ Enabling Redux DevTools Extension');
+    console.info('[setup] ✓ Enabling Redux DevTools Extension');
     enhancers.push(devToolsExtension());
   }
 
-  console.log('[setup] ✓ Enabling state logger');
+  console.info('[setup] ✓ Enabling state logger');
   const loggerMiddleware = createLogger({
     level: 'info',
     collapsed: true,
@@ -49,7 +50,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // Setup local storage
-const storageReducer = storage.reducer(rootReducer, immutableStateMerger);
+const storageReducer = storage.reducer(rootReducer(history), immutableStateMerger);
 const storageEngine = createEngine(process.env.APP_NAME, (key, value) => {
   // Provide your keys here that have to be excluded of saving in local storage.
   const excluded_keys = ['routing', 'ui'];
@@ -72,5 +73,12 @@ const store = createStore(
 // Use the provided storage loader to load the local storage in to the store.
 const storageLoader = storage.createLoader(storageEngine);
 storageLoader(store);
+
+// Enable Webpack hot module replacement for reducers.
+if (module.hot) {
+  module.hot.accept('../reducers', () => {
+    store.replaceReducer(rootReducer(history));
+  });
+}
 
 export default store;

@@ -23,6 +23,12 @@ $debug--color--primary: #006DF0;
   font-size: 1.6rem;
   line-height: 2.4rem;
 
+  * {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
   button {
     &:hover {
       cursor: pointer;
@@ -50,7 +56,10 @@ $debug--color--primary: #006DF0;
     justify-content: space-between;
     align-items: center;
 
-    h1, h2, h3, h4 {
+    h1,
+    h2,
+    h3,
+    h4 {
       margin: 0;
     }
 
@@ -98,6 +107,11 @@ $debug--color--primary: #006DF0;
     display: block;
     margin: 1rem 0;
 
+    label,
+    input {
+      margin: 0;
+    }
+
     &.form-item--stretched {
       display: flex;
       justify-content: space-between;
@@ -140,10 +154,6 @@ $debug--color--primary: #006DF0;
     white-space: nowrap;
     font-family: "Courier New", Courier, monospace;
     font-weight: bold;
-
-    * {
-      font-family: inherit;
-    }
 
     & > ul {
       flex: 1;
