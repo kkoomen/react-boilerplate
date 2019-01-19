@@ -50,9 +50,8 @@ if (__DEBUG__) {
   middlewares.push(loggerMiddleware);
 }
 
-// Setup local storage
-
 // Provide the state keys here to persist.
+// See: https://www.npmjs.com/package/redux-storage-decorator-filter
 const localStorageWhitelist = ['debug'];
 
 const storageReducer = storage.reducer(rootReducer(history), immutableStateMerger);
