@@ -8,6 +8,7 @@ import { Map } from 'immutable';
 import * as storage from 'redux-storage';
 import createEngine from 'redux-storage-engine-localstorage';
 import immutableStateMerger from 'redux-storage-merger-immutablejs';
+import localStorageFilter from 'redux-storage-decorator-filter';
 
 import rootReducer from '../reducers';
 import loggerConfig from '../config/logger';
@@ -50,12 +51,12 @@ if (__DEBUG__) {
 }
 
 // Setup local storage
+
+// Provide the state keys here to persist.
+const localStorageWhitelist = ['debug'];
+
 const storageReducer = storage.reducer(rootReducer(history), immutableStateMerger);
-const storageEngine = createEngine(process.env.APP_NAME, (key, value) => {
-  // Provide your keys here that have to be excluded of saving in local storage.
-  const excluded_keys = ['routing', 'ui'];
-  if (excluded_keys.indexOf(key) === -1) return value;
-});
+const storageEngine = localStorageFilter(createEngine(process.env.APP_NAME), localStorageWhitelist);
 const storageMiddleware = storage.createMiddleware(storageEngine);
 middlewares.push(storageMiddleware);
 
