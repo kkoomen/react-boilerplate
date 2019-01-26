@@ -11,6 +11,13 @@ module.exports = {
     // Ensure no unused prop types.
     "react/no-unused-prop-types": 1,
 
+    // When creating a JSX element that has an a tag, it is often desired to
+    // have the link open in a new tab using the `target='_blank'` attribute.
+    // Using this attribute unaccompanied by `rel='noreferrer noopener'`,
+    // however, is a severe security vulnerability. This rules requires that you
+    // accompany `target='_blank'` attributes with `rel='noreferrer noopener'`.
+    "react/jsx-no-target-blank": 2,
+
     // Ensure correct spacing around the arrow in an arrow-function.
     "arrow-spacing": 1,
 
