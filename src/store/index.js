@@ -10,9 +10,9 @@ import createEngine from 'redux-storage-engine-localstorage';
 import immutableStateMerger from 'redux-storage-merger-immutablejs';
 import localStorageFilter from 'redux-storage-decorator-filter';
 
-import rootReducer from '../reducers';
-import loggerConfig from '../config/logger';
-import { __DEBUG__ } from '../config/constants';
+import rootReducer from 'src/reducers';
+import loggerConfig from 'src/config/logger';
+import { __DEBUG__ } from 'src/config/constants';
 
 export const history = createBrowserHistory();
 
@@ -76,7 +76,7 @@ storageLoader(store);
 
 // Enable Webpack hot module replacement for reducers.
 if (module.hot) {
-  module.hot.accept('../reducers', () => {
+  module.hot.accept('src/reducers', () => {
     store.replaceReducer(rootReducer(history));
   });
 }

@@ -3,9 +3,17 @@ module.exports = {
     "react-app",
     "airbnb"
   ],
+  "parser": 'babel-eslint',
   "env": {
     "browser": true,
     "es6": true
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./config/webpack.config.eslint.js"
+      }
+    }
   },
   "rules": {
     // Ensure no unused prop types.

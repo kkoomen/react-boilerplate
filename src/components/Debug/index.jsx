@@ -8,9 +8,9 @@ import {
   disableActionLogs,
   enableBlacklistedActionLogs,
   disableBlacklistedActionLogs,
-} from '../../actions/Debug';
+} from 'src/actions/Debug';
 
-import loggerConfig from '../../config/logger';
+import loggerConfig from 'src/config/logger';
 
 import './style.css';
 

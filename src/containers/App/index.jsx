@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 
-import { __DEBUG__ } from '../../config/constants';
-import Home from '../Home';
-import NotFound from '../NotFound';
-import Debug from '../../components/Debug';
+import { __DEBUG__ } from 'src/config/constants';
+import Home from 'src/containers/Home';
+import NotFound from 'src/containers/NotFound';
+import Debug from 'src/components/Debug';
 
 class App extends Component {
   render() {

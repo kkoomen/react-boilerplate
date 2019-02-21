@@ -18,6 +18,7 @@
     "dotenv": "4.0.0",
     "eslint": "4.10.0",
     "eslint-config-react-app": "^2.1.0",
+    "eslint-import-resolver-webpack": "^0.11.0",
     "eslint-loader": "1.9.0",
     "eslint-plugin-flowtype": "2.39.1",
     "eslint-plugin-import": "2.8.0",
@@ -69,14 +70,9 @@
     "build-js": "node scripts/build.js",
     "build": "npm-run-all build-css build-js",
     "test": "node scripts/test.js --env=jsdom",
-    "eslint": "eslint ./src/",
-    "eslint:fix": "eslint --fix ./src/",
+    "eslint": "eslint './src/**/*.{js,jsx}'",
+    "eslint:fix": "eslint --fix './src/**/*.{js,jsx}'",
     "build-css": "node-sass-chokidar --include-path ./src/styles/ --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src/styles/ --include-path ./node_modules src/ -o src/ --watch --recursive"
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
   }
 }
