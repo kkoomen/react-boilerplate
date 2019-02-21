@@ -11,11 +11,15 @@ An extension of create-react-app (ejected) with some extras:
 - local storage (for the redux state)
 - basic structure
 - bootstrap 4
+- absolute imports
 
 This extension also has built-in support for the following extensions:
 
 - [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension#installation)
 
+# Absolute imports
+
+Example: `import Button from 'src/components/Button';`
 
 # Getting started
 
