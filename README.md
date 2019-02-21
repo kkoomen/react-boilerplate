@@ -10,6 +10,7 @@ An extension of create-react-app (ejected) with some extras:
 - ImmutableJS
 - local storage (for the redux state)
 - basic structure
+- absolute imports
 
 This extension also has built-in support for the following extensions:
 
@@ -17,9 +18,13 @@ This extension also has built-in support for the following extensions:
 
 ## Branches
 
+- `bootstrap-4`: A duplicate of the master branch, including bootstrap 4.
 - `immutablejs-excluded`: An duplicate of the master branch, excluding immutableJS.
 - `immutablejs-excluded--bootstrap-4`: An duplicate of the `immutablejs-excluded` branch, including bootstrap 4.
-- `bootstrap-4`: A duplicate of the master branch, including bootstrap 4.
+
+# Absolute imports
+
+Example: `import Button from 'src/components/Button';`
 
 # Getting started
 
