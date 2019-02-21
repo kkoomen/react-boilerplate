@@ -15,26 +15,17 @@ import loggerConfig from 'src/config/logger';
 import './style.css';
 
 class Debug extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      open: false,
-    };
-
-    this.onClick = this.onClick.bind(this);
-    this.toggleActionLogs = this.toggleActionLogs.bind(this);
-    this.toggleBlacklistedActionLogs = this.toggleBlacklistedActionLogs.bind(this);
+  state = {
+    open: false,
   }
 
-  onClick() {
-    this.setState({
-      ...this.state,
-      open: !this.state.open,
-    });
+  onClick = () => {
+    this.setState((prevState) => ({
+      open: !prevState.open,
+    }));
   }
 
-  toggleActionLogs(e) {
+  toggleActionLogs = (e) => {
     if (e.target.checked) {
       this.props.dispatch(enableActionLogs());
     } else {
@@ -42,7 +33,7 @@ class Debug extends Component {
     }
   }
 
-  toggleBlacklistedActionLogs(e) {
+  toggleBlacklistedActionLogs = (e) => {
     if (e.target.checked) {
       this.props.dispatch(enableBlacklistedActionLogs());
     } else {
