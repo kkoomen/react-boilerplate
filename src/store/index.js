@@ -10,9 +10,9 @@ import createEngine from 'redux-storage-engine-localstorage';
 import immutableStateMerger from 'redux-storage-merger-immutablejs';
 import localStorageFilter from 'redux-storage-decorator-filter';
 
-import rootReducer from '../reducers';
-import loggerConfig from '../config/logger';
-import { __DEBUG__ } from '../config/constants';
+import rootReducer from 'src/reducers';
+import loggerConfig from 'src/config/logger';
+import { __DEBUG__ } from 'src/config/constants';
 
 export const history = createBrowserHistory();
 
@@ -23,12 +23,17 @@ const middlewares = [
   routerMiddleware(history),
 ];
 
-if (__DEBUG__) {
-  const { devToolsExtension } = window;
+let devtools;
 
-  if (typeof devToolsExtension === 'function') {
+if (__DEBUG__) {
+  devtools = (
+    typeof window !== 'undefined'
+    && typeof window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ === 'function'
+    && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ actionsBlacklist: [] })
+  );
+
+  if (devtools) {
     console.info('[setup] ✓ Enabling Redux DevTools Extension');
-    enhancers.push(devToolsExtension());
   }
 
   console.info('[setup] ✓ Enabling state logger');
@@ -59,7 +64,9 @@ const storageEngine = localStorageFilter(createEngine(process.env.APP_NAME), loc
 const storageMiddleware = storage.createMiddleware(storageEngine);
 middlewares.push(storageMiddleware);
 
-const composedEnhancers = compose(
+
+const composedEnhancers = devtools || compose;
+const storeEnhancers = composedEnhancers(
   applyMiddleware(...middlewares),
   ...enhancers
 );
@@ -67,7 +74,7 @@ const composedEnhancers = compose(
 const store = createStore(
   storageReducer,
   initialStoreState,
-  composedEnhancers
+  storeEnhancers
 );
 
 // Use the provided storage loader to load the local storage in to the store.
@@ -76,7 +83,7 @@ storageLoader(store);
 
 // Enable Webpack hot module replacement for reducers.
 if (module.hot) {
-  module.hot.accept('../reducers', () => {
+  module.hot.accept('src/reducers', () => {
     store.replaceReducer(rootReducer(history));
   });
 }

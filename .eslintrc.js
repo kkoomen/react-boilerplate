@@ -3,9 +3,17 @@ module.exports = {
     "react-app",
     "airbnb"
   ],
+  "parser": "babel-eslint",
   "env": {
     "browser": true,
     "es6": true
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./config/webpack.config.js"
+      }
+    }
   },
   "rules": {
     // Ensure no unused prop types.
@@ -24,6 +32,18 @@ module.exports = {
     // Ensure no unused states.
     "react/no-unused-state": 1,
 
+    // Enforces consistent naming for boolean props.
+    "react/boolean-prop-naming": 1,
+
+    // Enforce consistent usage of destructuring assignment of props, state, and context.
+    "react/destructuring-assignment": [1, { "ignoreClassFields": true }],
+
+    // Prevent using this.state within a this.setState.
+    "react/no-access-state-in-setstate": 1,
+
+    // Enfore efficient linebreaked statements.
+    "operator-linebreak": 1,
+
     // Ensure no useless constructors.
     "no-useless-constructor": 1,
 
@@ -37,6 +57,9 @@ module.exports = {
 
     // Ensure no unnecessary braces are used.
     "react/jsx-curly-brace-presence": 1,
+
+    // Validate JSX has key prop when in array or iterator.
+    "react/jsx-key": 2,
 
     // Prefer attributes without the value when attr={true}.
     "react/jsx-boolean-value" : 1,
@@ -70,11 +93,15 @@ module.exports = {
     "react/jsx-max-props-per-line": 1,
 
     // Ensure correct position of the first property.
-    "react/jsx-first-prop-new-line": 0,
+    "react/jsx-first-prop-new-line": 1,
+
+    // Enforce spacing around jsx equals signs.
+    "react/jsx-equals-spacing": 1,
 
     // Disallow wrong indentation.
     "react/jsx-indent": 1,
 
+    // Validate closing bracket location in JSX.
     "react/jsx-closing-bracket-location": 0,
 
     // Disallow mutable export variables.
@@ -111,6 +138,7 @@ module.exports = {
     // Disallow control characters in regular expressions.
     "no-control-regex": 1,
 
+    // Disallow continue statements.
     "no-continue" : 1,
 
     // Disallow object as prop type.
@@ -471,34 +499,7 @@ module.exports = {
 
     // Make people use more spaces after block statements instead of blocks
     // being tied together.
-    "padding-line-between-statements": [
-      1,
-      {
-        "blankLine": "always",
-        "prev": ["block", "block-like", "multiline-block-like"],
-        "next": "*"
-      },
-      {
-        "blankLine": "always",
-        "prev": "case",
-        "next": "default"
-      },
-      {
-        "blankLine": "any",
-        "prev": "*",
-        "next": "break"
-      },
-      {
-        "blankLine": "always",
-        "prev": ["block", "block-like", "multiline-block-like"],
-        "next": "return"
-      },
-      {
-        "blankLine": "any",
-        "prev": ["const", "let", "var"],
-        "next": "*"
-      }
-    ],
+    "padding-line-between-statements": 0,
 
     // Allow just one var statement per function (off by default).
     "one-var": [1, "never"],
@@ -613,13 +614,13 @@ module.exports = {
     "react/jsx-uses-react": 2,
 
     // Enforce stateless React Components to be written as a pure function.
-    "react/prefer-stateless-function": 0,
+    "react/prefer-stateless-function": 1,
 
     // Prevent variables used in JSX to be incorrectly marked as unused.
     "react/jsx-uses-vars": 2,
 
     // Prevent function binding outside of the constructor.
-    "react/jsx-no-bind": [2, { "allowArrowFunctions": true }],
+    "react/jsx-no-bind": 2,
 
     // Prevent usage of setState in componentDidMount.
     "react/no-did-mount-set-state": 1,
@@ -662,6 +663,9 @@ module.exports = {
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/no-noninteractive-element-interactions": 0,
 
+    // This option limits every line in JSX to one expression each.
+    "react/jsx-one-expression-per-line": 1,
+
     // Disable so we can add events to anchors whenever we want.
     "jsx-a11y/anchor-is-valid": 0,
 
@@ -669,7 +673,14 @@ module.exports = {
     "jsx-a11y/alt-text": 1,
 
     // Enforce the usage of for-attribute on a label-element.
-    "jsx-a11y/label-has-for": 1,
+    "jsx-a11y/label-has-for": [1, {
+      "required": {
+        "some": ["nesting", "id"]
+      }
+    }],
+
+    // Prevent img alt text from containing redundant words like "image", "picture", or "photo".
+    "jsx-a11y/img-redundant-alt": 1,
 
     // Enforce the usage of autoFocus prop on jsx elements.
     "jsx-a11y/no-autofocus": 0,
@@ -683,11 +694,29 @@ module.exports = {
     // Enforce anchors having content for screen readers.
     "jsx-a11y/anchor-has-content": 0,
 
+    // Enforce that a label tag has a text label and an associated control.
+    "jsx-a11y/label-has-associated-control": 1,
+
+    // Require that mouseover/out come with focus/blur, for keyboard-only users.
+    "jsx-a11y/mouse-events-have-key-events": 0,
+
+    // Elements with an interactive role and interaction handlers must be focusable.
+    "jsx-a11y/interactive-supports-focus": 0,
+
+    // Enforce that DOM elements without semantic behavior not have interaction handlers.
+    "jsx-a11y/no-distracting-elements": 1,
+
+    // Ensure <hX> tags have content and are not aria-hidden.
+    "jsx-a11y/heading-has-content": 1,
+
+    // Require HTML elements to have a "lang" prop.
+    "jsx-a11y/html-has-lang": 1,
+
     // NOTE: This has to be 0 because it has been removed or doesn't work properly.
     "jsx-a11y/href-no-hash": 0,
 
     // Disallow the use of JSX in .js files.
-    "react/jsx-filename-extension": 0,
+    "react/jsx-filename-extension": 2,
 
     // Only allowed tabIndex to be declared on interactive elements.
     "jsx-a11y/no-noninteractive-tabindex": 1,

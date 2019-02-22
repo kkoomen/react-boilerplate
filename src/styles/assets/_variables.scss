@@ -8,31 +8,31 @@ $grid-breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1240px
+  xl: 1240px,
 );
 
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1240px
+  xl: 1250px,
 );
 
+$grid-gutter-width-base: 20px;
 $grid-xs-gutter-width-base: 20px;
-$grid-sm-gutter-width-base: 40px;
-$grid-md-gutter-width-base: 40px;
-$grid-lg-gutter-width-base: 60px;
-$grid-xl-gutter-width-base: 60px;
+$grid-sm-gutter-width-base: 20px;
+$grid-md-gutter-width-base: 20px;
+$grid-lg-gutter-width-base: 50px;
+$grid-xl-gutter-width-base: 50px;
 
 $grid-gutter-widths: (
   xs: $grid-xs-gutter-width-base,
   sm: $grid-sm-gutter-width-base,
   md: $grid-md-gutter-width-base,
   lg: $grid-lg-gutter-width-base,
-  xl: $grid-xl-gutter-width-base
+  xl: $grid-xl-gutter-width-base,
 );
 
-$screen-xs: #{map-get($grid-breakpoints, xs)};
 $screen-sm: #{map-get($grid-breakpoints, sm)};
 $screen-md: #{map-get($grid-breakpoints, md)};
 $screen-lg: #{map-get($grid-breakpoints, lg)};
@@ -47,9 +47,6 @@ $screen-xs-max: #{map-get($grid-breakpoints, sm) - 1};
 $screen-sm-max: #{map-get($grid-breakpoints, md) - 1};
 $screen-md-max: #{map-get($grid-breakpoints, lg) - 1};
 $screen-lg-max: #{map-get($grid-breakpoints, xl) - 1};
-
-$grid-float-breakpoint: $screen-sm;
-$grid-float-breakpoint-min: $screen-sm-max;
 
 // Lazy media query variables.
 $mobile: 'screen and (min-width: #{$screen-sm})';
@@ -75,43 +72,55 @@ $font--primary: 'Roboto', Helvetica, Arial, sans-serif;
 $font--secondary: 'Helvetica', Arial, sans-serif;
 
 // MOBILE: Font sizes (in pixels) / line-heights
-$font-size--body: 12;
-$line-height--body: 23px;
-
 $font-size--h1: 30;
-$line-height--h1: 3.8rem;
+$line-height--h1: 4rem;
 
-$font-size--h2: 25;
-$line-height--h2: 5.2rem;
+$font-size--h2: 24;
+$line-height--h2: 3.2rem;
 
-$font-size--h3: 22;
-$line-height--h3: 3rem;
+$font-size--h3: 20;
+$line-height--h3: 2.6rem;
 
-$font-size--h4: 15;
-$line-height--h4: 2rem;
+$font-size--h4: 14;
+$line-height--h4: 1.8rem;
 
-$font-size--button: 12;
+$font-size--button: 14;
 $line-height--button: 1.8rem;
+
+$font-size--body: 16;
+$line-height--body: 2.8rem;
+
+$font-size--body--small: 14;
+$line-height--body--small: 2.2rem;
+
+$font-size--body--large: 18;
+$line-height--body--large: 3rem;
 
 
 // DESKTOP: Font sizes (in pixels) / line-heights
-$desktop--font-size--body: 14;
-$desktop--line-height--body: 2.5rem;
-
 $desktop--font-size--h1: 60;
-$desktop--line-height--h1: 7.5rem;
+$desktop--line-height--h1: 7rem;
 
 $desktop--font-size--h2: 40;
-$desktop--line-height--h2: 5.2rem;
+$desktop--line-height--h2: 5rem;
 
-$desktop--font-size--h3: 24;
-$desktop--line-height--h3: 3rem;
+$desktop--font-size--h3: 26;
+$desktop--line-height--h3: 3.6rem;
 
-$desktop--font-size--h4: 18;
-$desktop--line-height--h4: 2.5rem;
+$desktop--font-size--h4: 16;
+$desktop--line-height--h4: 2rem;
 
-$desktop--font-size--button: 14;
-$desktop--line-height--button: 2.5rem;
+$desktop--font-size--button: 16;
+$desktop--line-height--button: 2rem;
+
+$desktop--font-size--body: 20;
+$desktop--line-height--body: 3.6rem;
+
+$desktop--font-size--body--small: 16;
+$desktop--line-height--body--small: 2.4rem;
+
+$desktop--font-size--body--large: 24;
+$desktop--line-height--body--large: 3.8rem;
 
 // -----------------------------------------------------------------------------
 //
@@ -123,22 +132,21 @@ $color--primary--lighter: #FF7777;
 $color--primary--darker: #9C0000;
 
 $color--black: #000;
-$color--grey: #e7e7e7;
-$color--grey--light: #e7e7e7;
-$color--grey--lighter: #f7f9fa;
 $color--white: #fff;
-$color--warn: #e10000;
-$color--warn--lighter: #fff9f9;
-$color--checked: #6fe100;
+$color--grey: #AAAAAA;
+$color--grey--lighter: #EFEFEF;
+$color--grey--darker: #7A7A7A;
 
 $color--transparent: rgba(255, 255, 255, 0);
+$color--placeholder: #f0f0f0;
+$color--error: #da3636;
 
 // -----------------------------------------------------------------------------
 //
 // Borders
 //
 // -----------------------------------------------------------------------------
-$color--border: $color--grey--light;
+$color--border: $color--grey--lighter;
 $border-radius--primary: 3px;
 
 // -----------------------------------------------------------------------------
@@ -146,7 +154,8 @@ $border-radius--primary: 3px;
 // Shadows
 //
 // -----------------------------------------------------------------------------
-$box-shadow--primary: 0 2px 4px 0 rgba(0, 0, 0, 0.26);
+$box-shadow--primary: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+$box-shadow--secondary: 0 0 10px 0 rgba(0, 0, 0, 0.15);
 
 // -----------------------------------------------------------------------------
 //

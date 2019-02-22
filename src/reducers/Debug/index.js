@@ -5,7 +5,7 @@ import {
   DEBUG_DISABLE_ACTION_LOGS,
   DEBUG_ENABLE_BLACKLISTED_ACTION_LOGS,
   DEBUG_DISABLE_BLACKLISTED_ACTION_LOGS,
-} from '../../actions/Debug';
+} from 'src/actions/Debug';
 
 const initialState = fromJS({
   logs: {
