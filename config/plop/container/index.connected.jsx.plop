@@ -1,0 +1,18 @@
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+class {{pascalCase containerName}} extends Component {
+  state = {}
+
+  render() {
+    return (
+      <div className="{{pascalCase containerName}}" />
+    );
+  }
+}
+
+function mapStateToProps(state, ownProps) {
+  return {};
+}
+
+export default connect(mapStateToProps)({{pascalCase containerName}});

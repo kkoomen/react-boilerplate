@@ -1,0 +1,16 @@
+import { fromJS } from 'immutable';
+
+import { {{upperCase (snakeCase reducerName)}}_EXAMPLE } from 'shared/actions/{{pascalCase reducerName}}';
+
+const initialState = fromJS({});
+
+export default function {{camelCase reducerName}}(state = initialState, action = {}) {
+  switch (action.type) {
+    case {{upperCase (snakeCase reducerName)}}_EXAMPLE: {
+      return state.set('example', true);
+    }
+
+    default:
+      return state;
+  }
+}

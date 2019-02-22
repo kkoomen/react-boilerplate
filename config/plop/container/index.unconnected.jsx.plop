@@ -1,0 +1,13 @@
+import React, { Component } from 'react';
+
+class {{pascalCase containerName}} extends Component {
+  state = {}
+
+  render() {
+    return (
+      <div className="{{pascalCase containerName}}" />
+    );
+  }
+}
+
+export default {{pascalCase containerName}};

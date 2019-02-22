@@ -1,0 +1,9 @@
+import React from 'react';
+
+const {{pascalCase componentName}} = () => {
+  return (
+    <div className="{{pascalCase componentName}}" />
+  );
+};
+
+export default {{pascalCase componentName}};
