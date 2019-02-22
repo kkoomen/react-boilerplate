@@ -11,8 +11,7 @@ import {
 } from 'src/actions/Debug';
 
 import loggerConfig from 'src/config/logger';
-
-import './style.css';
+import './style.scss';
 
 class Debug extends Component {
   state = {
@@ -78,25 +77,29 @@ class Debug extends Component {
 
                     <div className="form-group">
                       <div className="form-item">
-                        <input
-                          id="debug-logs-enabled"
-                          type="checkbox"
-                          onChange={this.toggleActionLogs}
-                          checked={this.props.settings.getIn(['logs', 'enabled'])}
-                        />
-                        <label htmlFor="debug-logs-enabled">Enabled</label>
+                        <label htmlFor="debug-logs-enabled">
+                          <input
+                            id="debug-logs-enabled"
+                            type="checkbox"
+                            onChange={this.toggleActionLogs}
+                            checked={this.props.settings.getIn(['logs', 'enabled'])}
+                          />
+                          Enabled
+                        </label>
                       </div>
                     </div>
 
                     <div className="form-group">
                       <div className="form-item">
-                        <input
-                          id="debug-logs-show-blacklisted"
-                          type="checkbox"
-                          onChange={this.toggleBlacklistedActionLogs}
-                          checked={this.props.settings.getIn(['logs', 'blacklisted'])}
-                        />
-                        <label htmlFor="debug-logs-show-blacklisted">Blacklisted</label>
+                        <label htmlFor="debug-logs-show-blacklisted">
+                          <input
+                            id="debug-logs-show-blacklisted"
+                            type="checkbox"
+                            onChange={this.toggleBlacklistedActionLogs}
+                            checked={this.props.settings.getIn(['logs', 'blacklisted'])}
+                          />
+                          Blacklisted
+                        </label>
                       </div>
                     </div>
 

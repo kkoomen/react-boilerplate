@@ -23,12 +23,17 @@ const middlewares = [
   routerMiddleware(history),
 ];
 
-if (__DEBUG__) {
-  const { devToolsExtension } = window;
+let devtools;
 
-  if (typeof devToolsExtension === 'function') {
+if (__DEBUG__) {
+  devtools = (
+    typeof window !== 'undefined'
+    && typeof window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ === 'function'
+    && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ actionsBlacklist: [] })
+  );
+
+  if (devtools) {
     console.info('[setup] ✓ Enabling Redux DevTools Extension');
-    enhancers.push(devToolsExtension());
   }
 
   console.info('[setup] ✓ Enabling state logger');
@@ -59,7 +64,9 @@ const storageEngine = localStorageFilter(createEngine(process.env.APP_NAME), loc
 const storageMiddleware = storage.createMiddleware(storageEngine);
 middlewares.push(storageMiddleware);
 
-const composedEnhancers = compose(
+
+const composedEnhancers = devtools || compose;
+const storeEnhancers = composedEnhancers(
   applyMiddleware(...middlewares),
   ...enhancers
 );
@@ -67,7 +74,7 @@ const composedEnhancers = compose(
 const store = createStore(
   storageReducer,
   initialStoreState,
-  composedEnhancers
+  storeEnhancers
 );
 
 // Use the provided storage loader to load the local storage in to the store.
