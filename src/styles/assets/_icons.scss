@@ -13,8 +13,8 @@ $icon-names: (
 // The base of an icon.
 @mixin icon {
   // The path here is defined starting from '/src/'.
-  background-image: url('assets/images/icons/icongrid.png');
-  background-image: url('assets/images/icons/icongrid.svg');
+  background-image: url('~src/assets/images/icons/icongrid.png');
+  background-image: url('~src/assets/images/icons/icongrid.svg');
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: #{length($icon-names)}em #{$rows}em;

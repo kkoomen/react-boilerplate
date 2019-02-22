@@ -6,7 +6,7 @@ import { ConnectedRouter } from 'connected-react-router/immutable';
 import store, { history } from './store';
 import * as serviceWorker from './serviceWorker';
 import App from './containers/App';
-import './index.scss';
+import './styles/main.scss';
 
 console.log(`Running enviroment ${process.env.NODE_ENV}`);
 
@@ -25,7 +25,7 @@ render();
 
 // Enable Webpack hot module replacement for components.
 if (module.hot) {
-  module.hot.accept('./containers/App', () => {
+  module.hot.accept('src/containers/App', () => {
     render();
   });
 }

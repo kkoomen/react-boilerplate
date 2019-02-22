@@ -1,4 +1,4 @@
-@import 'assets/variables.scss';
+@import 'assets/variables';
 
 // -----------------------------------------------------------------------------
 //
@@ -20,4 +20,86 @@
 @mixin font-size($size) {
   font-size: #{$size}px;
   font-size: #{$size / 10}rem;
+}
+
+@mixin h1 {
+  @include font-size($font-size--h1);
+  @include font--secondary(700);
+  line-height: $line-height--h1;
+  margin-bottom: 2rem;
+
+  @media #{$normal} {
+    @include font-size($desktop--font-size--h1);
+    line-height: $desktop--line-height--h1;
+    margin-bottom: 3rem;
+  }
+}
+
+@mixin h2 {
+  @include font-size($font-size--h2);
+  @include font--secondary(700);
+  line-height: $line-height--h2;
+  margin-bottom: 2rem;
+
+  @media #{$normal} {
+    @include font-size($desktop--font-size--h2);
+    line-height: $desktop--line-height--h2;
+    margin-bottom: 3rem;
+  }
+}
+
+@mixin h3 {
+  @include font-size($font-size--h3);
+  @include font--secondary(700);
+  line-height: $line-height--h3;
+  margin-bottom: 2rem;
+
+  @media #{$normal} {
+    @include font-size($desktop--font-size--h3);
+    line-height: $desktop--line-height--h3;
+  }
+}
+
+@mixin h4 {
+  @include font-size($font-size--h4);
+  @include font--secondary(700);
+  line-height: $line-height--h4;
+  margin-bottom: 1rem;
+
+  @media #{$normal} {
+    @include font-size($desktop--font-size--h4);
+    line-height: $desktop--line-height--h4;
+  }
+}
+
+@mixin body--regular {
+  @include font-size($font-size--body);
+  font-weight: 200;
+  line-height: $line-height--body;
+
+  @media #{$normal} {
+    @include font-size($desktop--font-size--body);
+    line-height: $desktop--line-height--body;
+  }
+}
+
+@mixin body--small {
+  @include font-size($font-size--body--small);
+  line-height: $line-height--body--small;
+  font-weight: 500;
+
+  @media #{$normal} {
+    @include font-size($desktop--font-size--body--small);
+    line-height: $desktop--line-height--body--small;
+  }
+}
+
+@mixin body--large {
+  @include font-size($font-size--body--large);
+  line-height: $line-height--body--large;
+
+  @media #{$normal} {
+    @include font-size($desktop--font-size--body--large);
+    line-height: $desktop--line-height--body--large;
+  }
 }
