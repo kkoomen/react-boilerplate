@@ -1,6 +1,6 @@
 # React Redux Web
 
-An extension of create-react-app (ejected) with some extras:
+An extension of create-react-app v2 (ejected) with some extras:
 
 - hot reloading :fire:
 - linters
