@@ -1,0 +1,6 @@
+export const {{upperCase (snakeCase reducerName)}}_EXAMPLE = '{{upperCase (snakeCase reducerName)}}_EXAMPLE';
+export function {{camelCase reducerName}}Example() {
+  return {
+    type: {{upperCase (snakeCase reducerName)}}_EXAMPLE,
+  };
+}

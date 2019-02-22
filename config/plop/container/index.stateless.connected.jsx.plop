@@ -1,0 +1,14 @@
+import React from 'react';
+import { connect } from 'react-redux';
+
+const {{pascalCase containerName}} = () => {
+  return (
+    <div className="{{pascalCase containerName}}" />
+  );
+};
+
+function mapStateToProps(state, ownProps) {
+  return {};
+}
+
+export default connect(mapStateToProps)({{pascalCase containerName}});
