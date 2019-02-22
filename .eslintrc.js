@@ -45,8 +45,6 @@ module.exports = {
     'no-useless-constructor': 'warn',
 
     // Disallow the usage of the "dangerouslySetInnerHTML" -attribute.
-    // This will be set only for this project, since we use Headless Drupal and
-    // we have to render some CKEDITOR's content.
     'react/no-danger': 'off',
 
     // Ensure correct code indentation for JSX.
