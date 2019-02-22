@@ -14,662 +14,680 @@ module.exports = {
   },
   rules: {
     // Ensure no unused prop types.
-    'react/no-unused-prop-types': 1,
+    'react/no-unused-prop-types': 'warn',
 
     // When creating a JSX element that has an a tag, it is often desired to
     // have the link open in a new tab using the `target='_blank'` attribute.
     // Using this attribute unaccompanied by `rel='noreferrer noopener'`,
     // however, is a severe security vulnerability. This rules requires that you
     // accompany `target='_blank'` attributes with `rel='noreferrer noopener'`.
-    'react/jsx-no-target-blank': 2,
+    'react/jsx-no-target-blank': 'error',
 
     // Ensure correct spacing around the arrow in an arrow-function.
-    'arrow-spacing': 1,
+    'arrow-spacing': 'warn',
 
     // Ensure no unused states.
-    'react/no-unused-state': 1,
+    'react/no-unused-state': 'warn',
 
     // Enforces consistent naming for boolean props.
-    'react/boolean-prop-naming': 1,
+    'react/boolean-prop-naming': 'warn',
 
     // Enforce consistent usage of destructuring assignment of props, state, and context.
-    'react/destructuring-assignment': [1, { ignoreClassFields: true }],
+    'react/destructuring-assignment': ['warn', { ignoreClassFields: true }],
 
     // Prevent using this.state within a this.setState.
-    'react/no-access-state-in-setstate': 1,
+    'react/no-access-state-in-setstate': 'warn',
 
     // Enfore efficient linebreaked statements.
-    'operator-linebreak': 1,
+    'operator-linebreak': 'warn',
 
     // Ensure no useless constructors.
-    'no-useless-constructor': 1,
+    'no-useless-constructor': 'warn',
 
     // Disallow the usage of the "dangerouslySetInnerHTML" -attribute.
     // This will be set only for this project, since we use Headless Drupal and
     // we have to render some CKEDITOR's content.
-    'react/no-danger': 0,
+    'react/no-danger': 'off',
 
     // Ensure correct code indentation for JSX.
-    'react/jsx-indent-props': 1,
+    'react/jsx-indent-props': 'warn',
 
     // Ensure no unnecessary braces are used.
-    'react/jsx-curly-brace-presence': 1,
+    'react/jsx-curly-brace-presence': 'warn',
 
     // Validate JSX has key prop when in array or iterator.
-    'react/jsx-key': 2,
+    'react/jsx-key': 'error',
 
     // Prefer attributes without the value when attr={true}.
-    'react/jsx-boolean-value': 1,
+    'react/jsx-boolean-value': 'warn',
 
     // Ensure closing tag to match indentation of opening of tag.
-    'react/jsx-closing-tag-location': 1,
+    'react/jsx-closing-tag-location': 'warn',
 
     // Ensure consistent use of file extension within the import path.
-    'import/extensions': 2,
+    'import/extensions': 'error',
 
     // Require a newline after each call in a method chain.
-    'newline-per-chained-call': 1,
+    'newline-per-chained-call': 'warn',
 
     // Require using arrow functions for callbacks.
-    'prefer-arrow-callback': 1,
+    'prefer-arrow-callback': 'warn',
 
     // Disallow or enforce spaces inside of blocks after opening block and
     // before closing block.
-    'block-spacing': 1,
+    'block-spacing': 'warn',
 
     // Require or disallow newlines around variable declarations.
-    'one-var-declaration-per-line': 1,
+    'one-var-declaration-per-line': 'warn',
 
     // Suggest using const on variables that are never re-assigned.
-    'prefer-const': 1,
+    'prefer-const': 'warn',
 
     // Prefer absolute imports defined before relative imports.
-    'import/first': 0,
+    'import/first': 'off',
 
     // Limiting the maximum of props on a single line (default: 1).
     'react/jsx-max-props-per-line': 1,
 
     // Ensure correct position of the first property.
-    'react/jsx-first-prop-new-line': 1,
+    'react/jsx-first-prop-new-line': 'warn',
 
     // Enforce spacing around jsx equals signs.
-    'react/jsx-equals-spacing': 1,
+    'react/jsx-equals-spacing': 'warn',
 
     // Disallow wrong indentation.
-    'react/jsx-indent': 1,
+    'react/jsx-indent': 'warn',
 
     // Validate closing bracket location in JSX.
-    'react/jsx-closing-bracket-location': 0,
+    'react/jsx-closing-bracket-location': 'off',
 
     // Disallow mutable export variables.
-    'import/no-mutable-exports': 0,
+    'import/no-mutable-exports': 'off',
 
     // Disallow dependencies being used in devDependencies.
-    'import/no-extraneous-dependencies': 0,
+    'import/no-extraneous-dependencies': 'off',
 
     // Require object literal shorthand syntax.
-    'object-shorthand': [0, 'never'],
+    'object-shorthand': ['off', 'never'],
 
     // Require each propery in object to go on a newline.
-    'object-curly-newline': 0,
+    'object-curly-newline': 'off',
 
     // Require the use of parenthesis instead of curly braces when the only line
     // in an arrow function is a return statement.
-    'arrow-body-style': 0,
+    'arrow-body-style': 'off',
 
     // Disallow or enforce trailing commas.
-    'comma-dangle': [1, 'always-multiline'],
+    'comma-dangle': ['warn', 'always-multiline'],
 
     // Prefer default export when only 1 item is being exported in a file.
-    'import/prefer-default-export': 0,
+    'import/prefer-default-export': 'off',
 
     // Disallow assignment in conditional expressions.
-    'no-cond-assign': 1,
+    'no-cond-assign': 'warn',
 
     // Disallow use of console.
-    'no-console': 0,
+    'no-console': 'off',
 
     // Disallow use of constant expressions in conditions.
-    'no-constant-condition': 1,
+    'no-constant-condition': 'warn',
 
     // Disallow control characters in regular expressions.
-    'no-control-regex': 1,
+    'no-control-regex': 'warn',
 
     // Disallow continue statements.
-    'no-continue': 1,
+    'no-continue': 'warn',
 
     // Disallow object as prop type.
-    'react/forbid-prop-types': 1,
+    'react/forbid-prop-types': 'warn',
 
     // Disallow use of debugger.
-    'no-debugger': 1,
+    'no-debugger': 'warn',
 
     // Disallow duplicate arguments in functions.
-    'no-dupe-args': 2,
+    'no-dupe-args': 'error',
 
     // Disallow duplicate keys when creating object literals.
-    'no-dupe-keys': 1,
+    'no-dupe-keys': 'error',
 
     // Disallow a duplicate case label.
-    'no-duplicate-case': 2,
+    'no-duplicate-case': 'error',
 
     // Disallow empty statements.
-    'no-empty': 1,
+    'no-empty': 'warn',
 
     // Disallow the use of empty character classes in regular expressions.
-    'no-empty-character-class': 2,
+    'no-empty-character-class': 'error',
 
     // Disallow assigning to the exception in a catch block.
-    'no-ex-assign': 2,
+    'no-ex-assign': 'error',
 
     // Disallow double-negation boolean casts in a boolean context.
-    'no-extra-boolean-cast': 1,
+    'no-extra-boolean-cast': 'warn',
 
     // Disallow unnecessary semicolons.
-    'no-extra-semi': 1,
+    'no-extra-semi': 'warn',
 
     // Disallow overwriting functions written as function declarations.
-    'no-func-assign': 2,
+    'no-func-assign': 'error',
 
     // Disallow function or variable declarations in nested blocks.
-    'no-inner-declarations': 2,
+    'no-inner-declarations': 'error',
 
     // Disallow invalid regular expression strings in the RegExp constructor.
-    'no-invalid-regexp': 2,
+    'no-invalid-regexp': 'error',
 
     // Disallow mixes of different operators.
-    'no-mixed-operators': 0,
+    'no-mixed-operators': 'off',
 
     // Disallow irregular whitespace outside of strings and comments.
-    'no-irregular-whitespace': 2,
+    'no-irregular-whitespace': 'error',
 
     // Disallow negation of the left operand of an in expression.
-    'no-negated-in-lhs': 2,
+    'no-negated-in-lhs': 'error',
 
-    // Disallow the use of object properties of the global object (Math and
-    // JSON) as functions.
-    'no-obj-calls': 2,
+    // Disallow the use of object properties of the global object
+    // (Math and JSON) as functions.
+    'no-obj-calls': 'error',
 
     // Disallow multiple spaces in a regular expression literal.
-    'no-regex-spaces': 1,
+    'no-regex-spaces': 'warn',
 
     // Disallow sparse arrays.
-    'no-sparse-arrays': 2,
+    'no-sparse-arrays': 'error',
 
     // Disallow unreachable statements after a return, throw, continue, or break
     // statement.
-    'no-unreachable': 1,
+    'no-unreachable': 'warn',
 
     // Disallow comparisons with the value NaN.
-    'use-isnan': 2,
+    'use-isnan': 'error',
 
     // Ensure JSDoc comments are valid.
-    'valid-jsdoc': 1,
+    'valid-jsdoc': 'warn',
 
     // Ensure that the results of typeof are compared against a valid string.
-    'valid-typeof': 2,
+    'valid-typeof': 'error',
 
     // Enforces return statements in callbacks of array's methods.
-    'array-callback-return': 0,
+    'array-callback-return': 'off',
 
     // Treat var statements as if they were block scoped.
     // Deep destructuring is not compatible.
     // https://github.com/eslint/eslint/issues/1863
-    'block-scoped-var': 0,
+    'block-scoped-var': 'off',
 
     // Enforce object & array destructuring.
-    'prefer-destructuring': 1,
+    'prefer-destructuring': 'warn',
 
     // Specify the maximum cyclomatic complexity allowed in a program.
-    complexity: 0,
+    complexity: 'off',
 
     // Require return statements to either always or never specify values.
-    'consistent-return': 0,
+    'consistent-return': 'off',
 
     // Specify curly brace conventions for all control statements.
-    curly: 1,
+    curly: 'warn',
 
     // Require default case in switch statements.
-    'default-case': 1,
+    'default-case': 'warn',
 
     // Encourages use of dot notation whenever possible.
-    'dot-notation': 0,
+    'dot-notation': 'off',
 
     // Require the use of === and !==.
-    eqeqeq: 1,
+    eqeqeq: 'warn',
 
     // Make sure for-in loops have an if statement.
-    'guard-for-in': 0,
+    'guard-for-in': 'off',
 
     // Disallow the use of alert, confirm, and prompt.
-    'no-alert': 1,
+    'no-alert': 'warn',
 
     // Disallow use of arguments.caller or arguments.callee.
-    'no-caller': 2,
+    'no-caller': 'error',
 
     // Disallow division operators explicitly at beginning of regular expression.
-    'no-div-regex': 0,
+    'no-div-regex': 'off',
 
     // Disallow else after a return in an if.
-    'no-else-return': 0,
+    'no-else-return': 'off',
 
     // Disallow comparisons to null without a type-checking operator.
-    'no-eq-null': 2,
+    'no-eq-null': 'error',
 
     // Disallow use of eval().
-    'no-eval': 2,
+    'no-eval': 'error',
 
     // Disallow adding to native types.
-    'no-extend-native': 2,
+    'no-extend-native': 'error',
 
     // Disallow unnecessary function binding.
-    'no-extra-bind': 2,
+    'no-extra-bind': 'error',
 
     // Disallow fallthrough of case statements.
-    'no-fallthrough': 2,
+    'no-fallthrough': 'error',
 
     // Disallow the use of leading or trailing decimal points in numeric
     // literals.
-    'no-floating-decimal': 2,
+    'no-floating-decimal': 'error',
 
     // Disallow use of eval()-like methods.
-    'no-implied-eval': 2,
+    'no-implied-eval': 'error',
 
     // Disallow usage of __iterator__ propertoy.
-    'no-iterator': 2,
+    'no-iterator': 'error',
 
     // Disallow use of labeled statements.
-    'no-labels': 0,
+    'no-labels': 'off',
 
     // Disallow unnecessary nested blocks.
-    'no-lone-blocks': 0,
+    'no-lone-blocks': 'warn',
 
     // Disallow creation of functions within loops.
-    'no-loop-func': 2,
+    'no-loop-func': 'error',
 
     // Disallow use of multiple spaces.
-    'no-multi-spaces': 1,
+    'no-multi-spaces': 'warn',
 
     // Disallow use of multiline strings.
-    'no-multi-str': 2,
+    'no-multi-str': 'error',
 
     // Disallow reassignments of native objects.
-    'no-native-reassign': 2,
+    'no-native-reassign': 'error',
 
     // Disallow use of new operator when not part of the assignment or comparison.
-    'no-new': 1,
+    'no-new': 'warn',
 
     // Disallow use of new operator for Function object.
-    'no-new-func': 2,
+    'no-new-func': 'error',
 
     // Disallows creating new instances of String,Number, and Boolean.
-    'no-new-wrappers': 2,
+    'no-new-wrappers': 'error',
 
     // Disallow use of octal literals.
-    'no-octal': 2,
+    'no-octal': 'error',
 
     // Disallow use of octal escape sequences in string literals, such as var
     // foo = "Copyright \251";
-    'no-octal-escape': 2,
+    'no-octal-escape': 'error',
 
     // Disallow reassignment of function parameters.
-    'no-param-reassign': 0,
+    'no-param-reassign': 'off',
 
     // Disallow use of process.env
-    'no-process-env': 0,
+    'no-process-env': 'off',
 
     // Disallow usage of __proto__ property.
-    'no-proto': 2,
+    'no-proto': 'error',
 
     // disallow declaring the same variable more then once.
-    'no-redeclare': 2,
+    'no-redeclare': 'error',
 
     // Disallow use of assignment in return statement.
-    'no-return-assign': 0,
+    'no-return-assign': 'off',
 
     // Require parens in arrow function arguments.
-    'arrow-parens': [1, 'always', { requireForBlockBody: false }],
+    'arrow-parens': ['warn', 'always', { requireForBlockBody: false }],
 
     // Disallow use of javascript: urls.
-    'no-script-url': 2,
+    'no-script-url': 'error',
 
     // Disallow comparisons where both sides are exactly the same.
-    'no-self-compare': 2,
+    'no-self-compare': 'error',
 
     // Disallow use of comma operator.
-    'no-sequences': 2,
+    'no-sequences': 'error',
 
     // Restrict what can be thrown as an exception.
-    'no-throw-literal': 2,
+    'no-throw-literal': 'error',
 
     // Disallow usage of expressions in statement position.
-    'no-unused-expressions': 1,
+    'no-unused-expressions': 'warn',
 
     // Disallow use of void operator.
-    'no-void': 2,
+    'no-void': 'error',
 
-    // Disallow usage of configurable warning terms in comments": 2, // e.g.
-    // TODO or FIXME
-    'no-warning-comments': [0, { terms: ['todo', 'fixme'], location: 'start' }],
+    // Disallow usage of configurable warning terms in comments": 'error',
+    // e.g. TODO or FIXME
+    'no-warning-comments': ['off', { terms: ['todo', 'fixme'], location: 'start' }],
 
     // Disallow use of the with statement.
-    'no-with': 2,
+    'no-with': 'error',
 
     // Require use of the second argument for parseInt().
-    radix: 0,
+    radix: 'off',
 
     // Requires to declare all vars on top of their containing scope.
-    'vars-on-top': 0,
+    'vars-on-top': 'off',
 
     // Require immediate function invocation to be wrapped in parentheses.
-    'wrap-iife': 2,
+    'wrap-iife': 'error',
 
     // Require or disallow Yoda conditions.
-    yoda: 1,
+    yoda: 'warn',
 
     // Controls location of Use Strict Directives.
-    // 0: required by `babel-eslint`.
-    strict: 0,
+    strict: 'off',
 
     // Disallow the catch clause parameter name being the same as a variable in
     // the outer scope.
-    'no-catch-shadow': 2,
+    'no-catch-shadow': 'error',
 
     // Disallow deletion of variables.
-    'no-delete-var': 2,
+    'no-delete-var': 'error',
 
     // Disallow labels that share a name with a variable.
-    'no-label-var': 2,
+    'no-label-var': 'error',
 
     // Disallow declaration of variables already declared in the outer scope.
-    'no-shadow': 0,
+    'no-shadow': 'off',
 
     // Disallow shadowing of names such as arguments.
-    'no-shadow-restricted-names': 2,
+    'no-shadow-restricted-names': 'error',
 
     // Disallow use of undeclared variables unless mentioned in a /*global */ block.
-    'no-undef': 2,
+    'no-undef': 'error',
 
     // Disallow use of undefined when initializing variables.
-    'no-undef-init': 2,
+    'no-undef-init': 'error',
 
     // Disallow Use of Chained Assignment Expressions.
-    'no-multi-assign': 1,
+    'no-multi-assign': 'warn',
 
     // Disallow use of undefined variable.
-    'no-undefined': 2,
+    'no-undefined': 'error',
 
     // Disallow declaration of variables that are not used in the code.
-    'no-unused-vars': [1, { args: 'none', ignoreRestSiblings: true }],
+    'no-unused-vars': ['warn', { args: 'none', ignoreRestSiblings: true }],
 
     // Disallow use of variables before they are defined.
     'no-use-before-define': [
-      2,
+      'error',
       { functions: false, classes: true, variables: true }
     ],
 
     // Disallow specified properties.
-    'no-restricted-properties': 1,
+    'no-restricted-properties': 'warn',
 
     // Disallow specified syntax.
-    'no-restricted-syntax': 1,
+    'no-restricted-syntax': 'warn',
 
     // This option sets a specific tab width for your code.
-    indent: [1, 2, { SwitchCase: 1 }],
+    indent: ['warn', 2, { SwitchCase: 1 }],
 
     // Enforce one true brace style.
-    'brace-style': 0,
+    'brace-style': 'off',
 
     // Require camel case names.
-    camelcase: 0,
+    camelcase: 'off',
 
     // Enforce spacing before and after comma.
-    'comma-spacing': [1, { before: false, after: true }],
+    'comma-spacing': ['warn', { before: false, after: true }],
 
     // Enforce one true comma style.
-    'comma-style': [1, 'last'],
+    'comma-style': ['warn', 'last'],
 
     // Enforces consistent naming when capturing the current execution context.
-    'consistent-this': [0, '_this'],
+    'consistent-this': ['off', '_this'],
 
     // Enforce newline at the end of file, with no multiple empty lines.
-    'eol-last': 1,
+    'eol-last': 'warn',
 
     // Require function expressions to have a name.
-    'func-names': 0,
+    'func-names': 'off',
 
     // Enforces use of function declarations or expressions.
-    'func-style': [1, 'declaration', { allowArrowFunctions: true }],
+    'func-style': ['warn', 'declaration', { allowArrowFunctions: true }],
 
     // Enforces spacing between keys and values in object literal properties.
-    'key-spacing': [1, { beforeColon: false, afterColon: true }],
+    'key-spacing': ['warn', { beforeColon: false, afterColon: true }],
 
     // Specify the maximum depth callbacks can be nested.
-    'max-nested-callbacks': [1, 5],
+    'max-nested-callbacks': ['warn', 5],
 
     // Require a capital letter for constructors
-    'new-cap': [1, { newIsCap: true, capIsNew: false }],
+    'new-cap': ['warn', { newIsCap: true, capIsNew: false }],
 
     // Disallow the omission of parentheses when invoking a constructor with no
     // arguments.
-    'new-parens': 1,
+    'new-parens': 'warn',
 
     // Allow or disallow an empty newline after var statement.
-    'newline-after-var': 0,
+    'newline-after-var': 'off',
 
     // Disallow use of the Array constructor.
-    'no-array-constructor': 0,
+    'no-array-constructor': 'off',
 
     // Disallow comments inline after code.
-    'no-inline-comments': 0,
+    'no-inline-comments': 'off',
 
     // Disallow if as the only statement in an else block.
-    'no-lonely-if': 1,
+    'no-lonely-if': 'warn',
 
     // Disallow mixed spaces and tabs for indentation.
-    'no-mixed-spaces-and-tabs': 1,
+    'no-mixed-spaces-and-tabs': 'warn',
 
     // Disallow multiple empty lines.
-    'no-multiple-empty-lines': [1, { max: 2 }],
+    'no-multiple-empty-lines': ['warn', { max: 2 }],
 
     // Disallow nested ternary expressions.
-    'no-nested-ternary': 1,
+    'no-nested-ternary': 'warn',
 
     // Disallow use of the Object constructor.
-    'no-new-object': 0,
+    'no-new-object': 'off',
 
     // Disallow space between function identifier and application.
-    'no-spaced-func': 1,
+    'no-spaced-func': 'warn',
 
     // Disallow the use of ternary operators.
-    'no-ternary': 0,
+    'no-ternary': 'off',
 
     // Disallow trailing whitespace at the end of lines.
-    'no-trailing-spaces': 1,
+    'no-trailing-spaces': 'warn',
 
     // Disallow dangling underscores in identifiers.
-    'no-underscore-dangle': 0,
+    'no-underscore-dangle': 'off',
 
     // Disallow unnecessary parentheses.
-    'no-extra-parens': 0,
+    'no-extra-parens': 'off',
 
     // Make people use more spaces after block statements instead of blocks
     // being tied together.
-    'padding-line-between-statements': 0,
+    'padding-line-between-statements': 'off',
 
     // Allow just one var statement per function.
-    'one-var': [1, 'never'],
+    'one-var': ['warn', 'never'],
 
     // Require assignment operator shorthand where possible or prohibit it
     // entirely.
-    'operator-assignment': [0, 'never'],
+    'operator-assignment': ['off', 'never'],
 
     // Enforce that class methods utilize this.
-    'class-methods-use-this': 0,
+    'class-methods-use-this': 'off',
 
     // Enforce padding within blocks.
-    'padded-blocks': [0, 'never'],
+    'padded-blocks': ['off', 'never'],
 
     // Require or disallow an empty line between class members.
-    'lines-between-class-members': [1, 'always'],
+    'lines-between-class-members': ['warn', 'always'],
 
     // Require quotes around object literal property names.
-    'quote-props': [1, 'as-needed'],
+    'quote-props': ['warn', 'as-needed'],
 
     // Specify whether double or single quotes should be used.
-    quotes: [0, 'single'],
+    quotes: ['off', 'single'],
 
     // Require or disallow use of semicolons instead of ASI.
-    semi: [1, 'always'],
+    semi: ['warn', 'always'],
 
     // Enforce spacing before and after semicolons.
-    'semi-spacing': [1, { before: false, after: true }],
+    'semi-spacing': ['warn', { before: false, after: true }],
 
     // Sort variables within the same declaration block.
-    'sort-vars': 0,
+    'sort-vars': 'off',
 
     // Require a space after certain keywords.
-    'keyword-spacing': [1, { before: true, after: true }],
+    'keyword-spacing': ['warn', { before: true, after: true }],
 
     // Require or disallow space before blocks.
-    'space-before-blocks': [1, 'always'],
+    'space-before-blocks': ['warn', 'always'],
 
     // Enforce consistent line breaks inside function parentheses.
-    'function-paren-newline': 0,
+    'function-paren-newline': 'off',
 
     // Require or disallow space before function opening parenthesis.
-    'space-before-function-paren': [1, { anonymous: 'never', named: 'never' }],
+    'space-before-function-paren': ['warn', { anonymous: 'never', named: 'never' }],
 
     // Require or disallow spaces inside object.
-    'object-curly-spacing': [1, 'always'],
+    'object-curly-spacing': ['warn', 'always'],
 
     // Require or disallow spaces inside arrays.
-    'array-bracket-spacing': [1, 'never'],
+    'array-bracket-spacing': ['warn', 'never'],
 
     // Require or disallow spaces inside arrays/object inside each other.
-    'computed-property-spacing': [1, 'never'],
+    'computed-property-spacing': ['warn', 'never'],
 
     // Require or disallow spaces inside parentheses.
-    'space-in-parens': [1, 'never'],
+    'space-in-parens': ['warn', 'never'],
 
     // Require spaces around operators.
-    'space-infix-ops': 1,
+    'space-infix-ops': 'warn',
 
     // Require or disallow spaces before/after unary operators.
-    'space-unary-ops': [1, { words: true, nonwords: false }],
+    'space-unary-ops': ['warn', { words: true, nonwords: false }],
 
     // Require or disallow a space immediately following the // in a line
     // comment.
-    'spaced-comment': [1, 'always'],
+    'spaced-comment': ['warn', 'always'],
 
     // Require regex literals to be wrapped in parentheses.
-    'wrap-regex': 0,
+    'wrap-regex': 'off',
 
     // Require let or const instead of var.
-    'no-var': 2,
+    'no-var': 'error',
 
     // Enforce the spacing around the * in generator functions.
-    'generator-star-spacing': [2, 'before'],
+    'generator-star-spacing': ['error', 'before'],
 
     // Specify the maximum depth that blocks can be nested.
-    'max-depth': [1, 4],
+    'max-depth': ['warn', 4],
 
     // Specify the maximum length of a line in your program.
-    'max-len': [0, 80, 2],
+    'max-len': ['off', 80, 2],
 
     // Limits the number of parameters that can be used in the function
     // declaration.
-    'max-params': [0, 99],
+    'max-params': ['off', 99],
 
     // Specify the maximum number of statement allowed in a function.
-    'max-statements': 0,
+    'max-statements': 'off',
 
     // Disallow use of bitwise operators.
-    'no-bitwise': 0,
+    'no-bitwise': 'off',
 
     // Disallow use of unary operators, ++ and --.
-    'no-plusplus': 0,
+    'no-plusplus': 'off',
 
     // Prevent missing displayName in a React component definition.
-    'react/display-name': 0,
+    'react/display-name': 'off',
 
     // Require a space before the closing tag.
-    'react/jsx-tag-spacing': 1,
+    'react/jsx-tag-spacing': 'warn',
 
     // Enforce quote style for JSX attributes.
-    'jsx-quotes': [1, 'prefer-double'],
+    'jsx-quotes': ['warn', 'prefer-double'],
 
     // Disallow undeclared variables in JSX.
-    'react/jsx-no-undef': 2,
+    'react/jsx-no-undef': 'error',
 
     // Enforce props alphabetical sorting.
-    'react/jsx-sort-props': 0,
+    'react/jsx-sort-props': 'off',
 
     // Prevent React to be incorrectly marked as unused.
-    'react/jsx-uses-react': 2,
+    'react/jsx-uses-react': 'error',
 
     // Enforce stateless React Components to be written as a pure function.
-    'react/prefer-stateless-function': 1,
+    'react/prefer-stateless-function': 'warn',
 
     // Prevent variables used in JSX to be incorrectly marked as unused.
-    'react/jsx-uses-vars': 2,
+    'react/jsx-uses-vars': 'error',
 
     // Prevent function binding outside of the constructor.
-    'react/jsx-no-bind': 2,
+    'react/jsx-no-bind': 'error',
 
     // Prevent usage of setState in componentDidMount.
-    'react/no-did-mount-set-state': 1,
+    'react/no-did-mount-set-state': 'warn',
 
     // Prevent usage of setState in componentDidUpdate.
-    'react/no-will-update-set-state': 1,
+    'react/no-will-update-set-state': 'warn',
 
     // Prevent usage of setState in componentDidUpdate.
-    'react/no-did-update-set-state': 1,
+    'react/no-did-update-set-state': 'warn',
 
     // Prevent multiple component definition per file.
-    'react/no-multi-comp': 0,
+    'react/no-multi-comp': 'off',
 
     // Prevent usage of unknown DOM property.
-    'react/no-unknown-property': 1,
+    'react/no-unknown-property': 'warn',
 
     // Prevent missing props validation in a React component definition.
-    'react/prop-types': 0,
+    'react/prop-types': 'off',
 
     // Prevent missing React when using JSX.
-    'react/react-in-jsx-scope': 2,
+    'react/react-in-jsx-scope': 'error',
 
     // Prevent extra closing tags for components without children.
-    'react/self-closing-comp': 1,
+    'react/self-closing-comp': 'warn',
 
     // Prevent missing parentheses around multilines JSX.
-    'react/jsx-wrap-multilines': 1,
+    'react/jsx-wrap-multilines': 'warn',
 
     // Prevent that an element uses an Array index in its key property.
-    'react/no-array-index-key': 0,
+    'react/no-array-index-key': 'error',
 
     // Prevent invalid characters from appearing in markup
-    'react/no-unescaped-entities': 1,
+    'react/no-unescaped-entities': 'warn',
 
     // Enforce component methods order.
-    'react/sort-comp': 0,
+    'react/sort-comp': 'off',
 
-    // Allow interaction for static elements.
-    'jsx-a11y/no-static-element-interactions': 0,
-    'jsx-a11y/click-events-have-key-events': 0,
-    'jsx-a11y/no-noninteractive-element-interactions': 0,
+    // Static HTML elements do not have semantic meaning. This is clear in the
+    // case of `<div>` and `<span>`. It is less so clear in the case of elements
+    // that _seem_ semantic, but that do not have a semantic mapping in the
+    // accessibility layer. For example `<a>`, `<big>`, `<blockquote>`,
+    // `<footer>`, `<picture>`, `<strike>` and `<time>` -- to name a few -- have
+    // no semantic layer mapping. They are as void of meaning as `<div>`.
+    'jsx-a11y/no-static-element-interactions': 'off',
+
+    // Enforce onClick is accompanied by at least one of the following: onKeyUp,
+    // onKeyDown, onKeyPress. Coding for the keyboard is important for users
+    // with physical disabilities who cannot use a mouse, AT compatibility, and
+    // screenreader users.
+    'jsx-a11y/click-events-have-key-events': 'off',
+
+    // Non-interactive HTML elements and non-interactive ARIA roles indicate
+    // _content_ and _containers_ in the user interface. A non-interactive
+    // element does not support event handlers (mouse and key handlers).
+    // Non-interactive elements include `<main>`, `<area>`, `<h1>` (,`<h2>`,
+    // etc), `<p>`, `<img>`, `<li>`, `<ul>` and `<ol>`. Non-interactive
+    // [WAI-ARIA roles](https://www.w3.org/TR/wai-aria-1.1/#usage_intro) include
+    // `article`, `banner`, `complementary`, `img`, `listitem`, `main`, `region`
+    // and `tooltip`.
+    'jsx-a11y/no-noninteractive-element-interactions': 'off',
 
     // This option limits every line in JSX to one expression each.
-    'react/jsx-one-expression-per-line': 1,
+    'react/jsx-one-expression-per-line': 'warn',
 
     // Disable so we can add events to anchors whenever we want.
-    'jsx-a11y/anchor-is-valid': 0,
+    'jsx-a11y/anchor-is-valid': 'off',
 
     // Enforce alt property on an img-tag.
-    'jsx-a11y/alt-text': 1,
+    'jsx-a11y/alt-text': 'warn',
 
     // Enforce the usage of for-attribute on a label-element.
     'jsx-a11y/label-has-for': [
-      1,
+      'warn',
       {
         required: {
           some: ['nesting', 'id']
@@ -678,48 +696,48 @@ module.exports = {
     ],
 
     // Prevent img alt text from containing redundant words like "image", "picture", or "photo".
-    'jsx-a11y/img-redundant-alt': 1,
+    'jsx-a11y/img-redundant-alt': 'warn',
 
     // Enforce the usage of autoFocus prop on jsx elements.
-    'jsx-a11y/no-autofocus': 0,
+    'jsx-a11y/no-autofocus': 'off',
 
     // Enforce key events with mouse events.
-    'jsx-a11y/mouse-events-have-key-events': 0,
+    'jsx-a11y/mouse-events-have-key-events': 'off',
 
     // Enforce that iframes require a title attribute.
-    'jsx-a11y/iframe-has-title': 1,
+    'jsx-a11y/iframe-has-title': 'warn',
 
     // Enforce anchors having content for screen readers.
-    'jsx-a11y/anchor-has-content': 0,
+    'jsx-a11y/anchor-has-content': 'off',
 
     // Enforce that a label tag has a text label and an associated control.
-    'jsx-a11y/label-has-associated-control': 1,
+    'jsx-a11y/label-has-associated-control': 'warn',
 
     // Require that mouseover/out come with focus/blur, for keyboard-only users.
-    'jsx-a11y/mouse-events-have-key-events': 0,
+    'jsx-a11y/mouse-events-have-key-events': 'off',
 
     // Elements with an interactive role and interaction handlers must be focusable.
-    'jsx-a11y/interactive-supports-focus': 0,
+    'jsx-a11y/interactive-supports-focus': 'off',
 
     // Enforce that DOM elements without semantic behavior not have interaction handlers.
-    'jsx-a11y/no-distracting-elements': 1,
+    'jsx-a11y/no-distracting-elements': 'warn',
 
     // Ensure <hX> tags have content and are not aria-hidden.
-    'jsx-a11y/heading-has-content': 1,
+    'jsx-a11y/heading-has-content': 'warn',
 
     // Require HTML elements to have a "lang" prop.
-    'jsx-a11y/html-has-lang': 1,
+    'jsx-a11y/html-has-lang': 'warn',
 
-    // NOTE: This has to be 0 because it has been removed or doesn't work properly.
-    'jsx-a11y/href-no-hash': 0,
+    // NOTE: This has to be 'off' because it has been removed or doesn't work properly.
+    'jsx-a11y/href-no-hash': 'off',
 
     // Disallow the use of JSX in .js files.
-    'react/jsx-filename-extension': 2,
+    'react/jsx-filename-extension': 'error',
 
     // Only allowed tabIndex to be declared on interactive elements.
-    'jsx-a11y/no-noninteractive-tabindex': 1,
+    'jsx-a11y/no-noninteractive-tabindex': 'warn',
 
     // Ensure captions are used in media.
-    'jsx-a11y/media-has-caption': 0
+    'jsx-a11y/media-has-caption': 'off'
   }
 };
