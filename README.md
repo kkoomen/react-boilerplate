@@ -43,6 +43,11 @@ This version also has built-in support for the following extensions:
 
 # Absolute imports
 
+This repository supports absolute paths where `src` is an alias to the `/src`
+directory. Absolute imports improve readability, consistency and the component
+can be moved easily in structure without the hassle of adjusting the import
+paths.
+
 Example:<br />
 - JSX: `import Button from 'src/components/Button';`
 - SCSS: `background-image: url('~src/assets/images/icons/icongrid.svg');`
