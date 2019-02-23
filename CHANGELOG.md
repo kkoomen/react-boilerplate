@@ -40,3 +40,7 @@ Implement absolute-path imports for webpack and eslint and refactor Debug compon
 ## 2019-02-22
 
 Upgrade boilerplate to use create-react-app v2 and update all eslint packages.
+
+## 2019-02-23
+
+Use `REACT_APP_ENV` as a replacement of `NODE_ENV` to distinguish between environments.
