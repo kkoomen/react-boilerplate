@@ -1,30 +1,32 @@
 # React Redux Web
 
-An extension of create-react-app v2 (ejected) with some extras:
+An ejected version of create-react-app v2 with some extras:
 
-- hot reloading :fire:
-- linters
-- redux
-- redux-thunk
-- routing
-- ImmutableJS
-- local storage (for the redux state)
-- basic structure
-- absolute imports
+- [x] hot reloading :fire:
+- [x] linters
+- [x] redux
+- [x] redux-thunk
+- [x] routing
+- [x] ImmutableJS
+- [x] local storage (for the redux state)
+- [x] basic structure
+- [x] absolute imports
+- [x] [plop templates](https://www.npmjs.com/package/plop)
 
-This extension also has built-in support for the following extensions:
+This version also has built-in support for the following extensions:
 
 - [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension#installation)
 
-## Branches
+# Branches
 
-- `bootstrap-4`: A duplicate of the master branch, including bootstrap 4.
-- `immutablejs-excluded`: An duplicate of the master branch, excluding immutableJS.
-- `immutablejs-excluded--bootstrap-4`: An duplicate of the `immutablejs-excluded` branch, including bootstrap 4.
+- [bootstrap-4](https://github.com/kkoomen/react-boilerplate/tree/bootstrap-4)
+    A duplicate of the master branch, including bootstrap 4.
 
 # Absolute imports
 
-Example: `import Button from 'src/components/Button';`
+Example:<br />
+- JSX: `import Button from 'src/components/Button';`
+- SCSS: `background-image: url('~src/assets/images/icons/icongrid.svg');`
 
 # Getting started
 
