@@ -56,9 +56,10 @@ Example:<br />
 # Environments
 
 TLDR; If you want to add a new environment (for example: staging) the only thing
-you have to do is copy over the `build` script in the `package.json` to a
-`build:staging` script and change the `REACT_APP_ENV=production` to
-`REACT_APP_ENV=staging`.
+you have to do is the following:
+
+- Copy over the `build` script in the `package.json` to a `build:staging` script.
+- Change the `REACT_APP_ENV=production` to `REACT_APP_ENV=staging` in the `build:staging` script.
 
 --
 
