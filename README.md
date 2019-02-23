@@ -20,6 +20,7 @@ This version also has built-in support for the following extensions:
 # Branches
 
 - [bootstrap-4](https://github.com/kkoomen/react-boilerplate/tree/bootstrap-4)
+
     A duplicate of the master branch, including bootstrap 4.
 
 # Absolute imports
