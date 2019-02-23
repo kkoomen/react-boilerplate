@@ -1,9 +1,10 @@
-export const __DEBUG__ = process.env.NODE_ENV !== 'production';
+export const APP_ENV = process.env.REACT_APP_ENV;
+export const __DEBUG__ = APP_ENV !== 'production';
 
 let API_URL = 'https://example.com/api';
-if (process.env.NODE_ENV === 'development') {
+if (APP_ENV === 'development') {
   API_URL = 'http://localhost:8000/api';
-} else if (process.env.NODE_ENV === 'staging') {
+} else if (APP_ENV === 'staging') {
   API_URL = 'http://staging.example.com/api';
 }
 
