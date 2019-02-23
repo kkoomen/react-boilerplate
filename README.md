@@ -17,17 +17,20 @@ This version also has built-in support for the following extensions:
 
 - [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension#installation)
 
+# Table of contents
+1. [Branches](#branches)
+2. [Getting started](#getting-started)
+3. [Absolute imports](#absolute-imports)
+3. [Linting](#linting)
+3. [Useful tools](#useful-tools)
+    1. [Chrome extensions](#chrome-extensions)
+    2. [Template generators](#template-generators)
+
 # Branches
 
 - [bootstrap-4](https://github.com/kkoomen/react-boilerplate/tree/bootstrap-4)
 
     A duplicate of the master branch, including bootstrap 4.
-
-# Absolute imports
-
-Example:<br />
-- JSX: `import Button from 'src/components/Button';`
-- SCSS: `background-image: url('~src/assets/images/icons/icongrid.svg');`
 
 # Getting started
 
@@ -38,6 +41,12 @@ Example:<br />
 - Run `npm install`
 - Run `npm start`
 
+# Absolute imports
+
+Example:<br />
+- JSX: `import Button from 'src/components/Button';`
+- SCSS: `background-image: url('~src/assets/images/icons/icongrid.svg');`
+
 # Linting
 
 All rules within linting are set to a warning, except for those that are
@@ -47,14 +56,14 @@ code such as the use of `eval()`. Linters should suggest, not force.
 If you find any rules that are left out or should be different, feel free to
 make a pull request.
 
-# Handy tools
+# Useful tools
 
-Optional extensions that might be handy.
+Optional extensions that might be useful.
 
-### Chrome
+## Chrome extensions
 
 - [ImmutableJS Object Formatter](https://chrome.google.com/webstore/detail/immutablejs-object-format/hgldghadipiblonfkkicmgcbbijnpeog)
 
-### Template generators
+## Template generators
 
 - [cra-gen](https://github.com/kkoomen/cra-gen)
