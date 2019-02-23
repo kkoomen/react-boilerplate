@@ -21,8 +21,9 @@ This version also has built-in support for the following extensions:
 1. [Branches](#branches)
 2. [Getting started](#getting-started)
 3. [Absolute imports](#absolute-imports)
-3. [Linting](#linting)
-3. [Useful tools](#useful-tools)
+4. [Environments](#environments)
+5. [Linting](#linting)
+6. [Useful tools](#useful-tools)
     1. [Chrome extensions](#chrome-extensions)
     2. [Template generators](#template-generators)
 
@@ -51,6 +52,27 @@ paths.
 Example:<br />
 - JSX: `import Button from 'src/components/Button';`
 - SCSS: `background-image: url('~src/assets/images/icons/icongrid.svg');`
+
+# Environments
+
+TLDR; If you want to add a new environment (for example: staging) the only thing
+you have to do is copy over the `build` script in the `package.json` to a
+`build:staging` script and change the `REACT_APP_ENV=production` to
+`REACT_APP_ENV=staging`.
+
+--
+
+Instead of overwriting `NODE_ENV` we will use `REACT_APP_ENV` to distinguish
+between environments. CRA sets the `NODE_ENV` for us at build-time which ensures
+a correct build at any time. This saves us extra code to adjust in the CRA
+config for it to work. At the end we are aiming for a variable per environment
+that tells us the type of environment. If you want to distinguish between
+environments programmatically you want to use `process.env.REACT_APP_ENV` or
+(preferably) use `import { APP_ENV } from 'src/config/constants';` which is
+pre-defined in this repository.
+
+If you want a bit more info you can read it at
+[https://facebook.github.io/create-react-app/docs/adding-custom-environment-variables](https://facebook.github.io/create-react-app/docs/adding-custom-environment-variables).
 
 # Linting
 

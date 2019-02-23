@@ -6,9 +6,10 @@ import { ConnectedRouter } from 'connected-react-router/immutable';
 import store, { history } from './store';
 import * as serviceWorker from './serviceWorker';
 import App from './containers/App';
+import { APP_ENV } from './config/constants';
 import './styles/main.scss';
 
-console.log(`Running enviroment ${process.env.NODE_ENV}`);
+console.log(`Running enviroment ${APP_ENV}`);
 
 const render = () => {
   ReactDOM.render(
