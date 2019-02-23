@@ -1,4 +1,4 @@
-# React Redux Web
+# React boilerplate
 
 An ejected version of create-react-app v2 with some extras:
 
