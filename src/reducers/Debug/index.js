@@ -14,7 +14,7 @@ const initialState = fromJS({
   },
 });
 
-export default function debug(state = initialState, action) {
+export default function debug(state = initialState, action = {}) {
   switch (action.type) {
     case DEBUG_ENABLE_ACTION_LOGS: {
       return state.setIn(['logs', 'enabled'], true);
