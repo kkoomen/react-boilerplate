@@ -30,7 +30,7 @@ module.exports = {
     'react/no-unused-state': 'warn',
 
     // Enforces consistent naming for boolean props.
-    'react/boolean-prop-naming': 'warn',
+    'react/boolean-prop-naming': 'off',
 
     // Enforce consistent usage of destructuring assignment of props, state, and context.
     'react/destructuring-assignment': ['warn', { ignoreClassFields: true }],
