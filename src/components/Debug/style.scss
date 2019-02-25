@@ -170,10 +170,6 @@ $debug--transition-timing-function: cubic-bezier(0.23, 0, 0.03, 1.01);
   }
 
   .debug--section--wrapper {
-    &:first-child {
-      margin-top: 2rem;
-    }
-
     &:last-child {
       margin-bottom: 2rem;
     }
