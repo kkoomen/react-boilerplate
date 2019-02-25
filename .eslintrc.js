@@ -26,6 +26,9 @@ module.exports = {
     // Ensure correct spacing around the arrow in an arrow-function.
     'arrow-spacing': 'warn',
 
+    // Enforce the location of arrow function bodies with implicit returns.
+    'implicit-arrow-linebreak': 'warn',
+
     // Ensure no unused states.
     'react/no-unused-state': 'warn',
 
@@ -675,7 +678,7 @@ module.exports = {
     'jsx-a11y/no-noninteractive-element-interactions': 'off',
 
     // This option limits every line in JSX to one expression each.
-    'react/jsx-one-expression-per-line': 'warn',
+    'react/jsx-one-expression-per-line': 'off',
 
     // Disable so we can add events to anchors whenever we want.
     'jsx-a11y/anchor-is-valid': 'off',
