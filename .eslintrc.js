@@ -38,9 +38,6 @@ module.exports = {
     // Disallow this keywords outside of classes or class-like objects.
     'babel/no-invalid-this': 'error',
 
-    // Prevent this from being used in stateless functional components.
-    'react/no-this-in-sfc': 'error',
-
     // Ensure correct spacing around the arrow in an arrow-function.
     'arrow-spacing': 'warn',
 
