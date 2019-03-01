@@ -1,6 +1,12 @@
 module.exports = {
   extends: ['react-app', 'airbnb'],
   parser: 'babel-eslint',
+  plugins: [
+    'babel',
+    'react',
+    'jsx-a11y',
+    'import',
+  ],
   env: {
     browser: true,
     es6: true
@@ -23,6 +29,18 @@ module.exports = {
     // accompany `target='_blank'` attributes with `rel='noreferrer noopener'`.
     'react/jsx-no-target-blank': 'error',
 
+    // Disallow this keywords outside of classes or class-like objects.
+    // NOTE: This has been turn off because we want babel to pick this up.
+    // This allowed proper parsing for fat-arrow-functions in classes to be
+    // recognized as well. See rule babel/no-invalid-this.
+    'no-invalid-this': 'off',
+
+    // Disallow this keywords outside of classes or class-like objects.
+    'babel/no-invalid-this': 'error',
+
+    // Prevent this from being used in stateless functional components.
+    'react/no-this-in-sfc': 'error',
+
     // Ensure correct spacing around the arrow in an arrow-function.
     'arrow-spacing': 'warn',
 
@@ -36,7 +54,7 @@ module.exports = {
     'react/boolean-prop-naming': 'off',
 
     // Enforce consistent usage of destructuring assignment of props, state, and context.
-    'react/destructuring-assignment': ['warn', { ignoreClassFields: true }],
+    'react/destructuring-assignment': ['warn', 'always', { ignoreClassFields: true }],
 
     // Prevent using this.state within a this.setState.
     'react/no-access-state-in-setstate': 'warn',
