@@ -14,7 +14,9 @@ import rootReducer from 'src/reducers';
 import loggerConfig from 'src/config/logger';
 import { __DEBUG__ } from 'src/config/constants';
 
-export const history = createBrowserHistory();
+export const history = createBrowserHistory({
+  basename: process.env.PUBLIC_URL,
+});
 
 const initialStoreState = Map();
 const enhancers = [];
