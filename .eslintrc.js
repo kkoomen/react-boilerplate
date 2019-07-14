@@ -118,7 +118,7 @@ module.exports = {
     'react/jsx-closing-bracket-location': 'off',
 
     // Disallow mutable export variables.
-    'import/no-mutable-exports': 'off',
+    'import/no-mutable-exports': 'error',
 
     // Disallow dependencies being used in devDependencies.
     'import/no-extraneous-dependencies': 'off',
@@ -397,7 +397,7 @@ module.exports = {
     'no-label-var': 'error',
 
     // Disallow declaration of variables already declared in the outer scope.
-    'no-shadow': 'off',
+    'no-shadow': 'warn',
 
     // Disallow shadowing of names such as arguments.
     'no-shadow-restricted-names': 'error',
@@ -436,7 +436,7 @@ module.exports = {
     'brace-style': 'off',
 
     // Require camel case names.
-    camelcase: 'off',
+    camelcase: 'warn',
 
     // Enforce spacing before and after comma.
     'comma-spacing': ['warn', { before: false, after: true }],
